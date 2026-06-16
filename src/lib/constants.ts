@@ -1,6 +1,11 @@
 import personCenter from "../assets/testimonials/person-center.png";
 import personLeft from "../assets/testimonials/person-left.png";
 import personRight from "../assets/testimonials/person-right.png";
+import partnerApple from "../assets/partners/apple.png";
+import partnerClay from "../assets/partners/clay.png";
+import partnerFacebook from "../assets/partners/facebook.png";
+import partnerOpenai from "../assets/partners/openai.png";
+import partnerSlack from "../assets/partners/slack.png";
 
 export interface FooterLink {
   label: string;
@@ -18,11 +23,11 @@ export const PARTNERS_HEADING = {
 } as const;
 
 export const PARTNER_LOGOS = [
-  { name: "OpenAI", src: "/partners/openai.png" },
-  { name: "Apple", src: "/partners/apple.png" },
-  { name: "Facebook", src: "/partners/facebook.png" },
-  { name: "Slack", src: "/partners/slack.png" },
-  { name: "Clay", src: "/partners/clay.png" },
+  { name: "OpenAI", src: partnerOpenai },
+  { name: "Apple", src: partnerApple },
+  { name: "Facebook", src: partnerFacebook },
+  { name: "Slack", src: partnerSlack },
+  { name: "Clay", src: partnerClay },
 ] as const;
 
 export const NAV_LINKS = [

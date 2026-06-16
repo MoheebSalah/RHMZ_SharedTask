@@ -3,14 +3,19 @@
 @import "./styles/tokens.css";
 @import "./styles/typography.css";
 @import "./styles/footer.css";
+@import "./styles/partners.css";
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
   body {
     @apply bg-white font-sans text-text antialiased;
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
   *:focus-visible {
