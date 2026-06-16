@@ -18,17 +18,17 @@ export const colors = {
 } as const;
 
 export const typography = {
-  title: { fontSize: 80, lineHeight: 80, fontWeight: 400 },
-  header1: { fontSize: 48, lineHeight: 52, fontWeight: 400 },
-  header2: { fontSize: 32, lineHeight: 42, fontWeight: 700 },
-  header3: { fontSize: 24, lineHeight: 31, fontWeight: 700 },
-  header4: { fontSize: 20, lineHeight: 27, fontWeight: 700 },
-  body1: { fontSize: 18, lineHeight: 25, fontWeight: 400 },
-  body2: { fontSize: 16, lineHeight: 23, fontWeight: 400 },
-  body3: { fontSize: 14, lineHeight: 21, fontWeight: 400 },
-  btn1: { fontSize: 18, lineHeight: 25, fontWeight: 700 },
-  btn2: { fontSize: 16, lineHeight: 23, fontWeight: 700 },
-  btn3: { fontSize: 14, lineHeight: 21, fontWeight: 700 },
+  title: { fontSize: 80, lineHeight: 80, fontWeight: 400, fontFamily: "var(--font-lingo)" },
+  header1: { fontSize: 48, lineHeight: 52, fontWeight: 400, fontFamily: "var(--font-lingo)" },
+  header2: { fontSize: 32, lineHeight: 42, fontWeight: 700, fontFamily: "var(--font-lingo)" },
+  header3: { fontSize: 24, lineHeight: 31, fontWeight: 700, fontFamily: "var(--font-lingo)" },
+  header4: { fontSize: 20, lineHeight: 27, fontWeight: 700, fontFamily: "var(--font-lingo)" },
+  body1: { fontSize: 18, lineHeight: 25, fontWeight: 400, fontFamily: "var(--font-outfit)" },
+  body2: { fontSize: 16, lineHeight: 23, fontWeight: 400, fontFamily: "var(--font-outfit)" },
+  body3: { fontSize: 14, lineHeight: 21, fontWeight: 400, fontFamily: "var(--font-outfit)" },
+  btn1: { fontSize: 18, lineHeight: 25, fontWeight: 700, fontFamily: "var(--font-outfit)" },
+  btn2: { fontSize: 16, lineHeight: 23, fontWeight: 700, fontFamily: "var(--font-outfit)" },
+  btn3: { fontSize: 14, lineHeight: 21, fontWeight: 700, fontFamily: "var(--font-outfit)" },
 } as const;
 
 export const spacing = {

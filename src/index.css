@@ -1,4 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
+
+@font-face {
+  font-family: 'SS Default Lingo';
+  src: url('./assets/fonts/Default Lingo Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --font-outfit: 'Outfit', sans-serif;
+  --font-lingo: 'SS Default Lingo', serif;
+}
 
 @layer base {
   html {

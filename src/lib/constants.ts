@@ -147,35 +147,34 @@ export const FEATURE_FOUR = {
 export type ServicePanelId = "left" | "center" | "right";
 
 export const SERVICES_PANELS = [
-  {
-    id: "left" as const,
-    image: "/services/panel-left.png",
-    icon: "/services/icon-left.png",
-    imageAlt: "Two hands reaching toward each other",
-    title: "Operational Excellence",
-    description:
-      "Optimize workflows, reduce inefficiencies, and improve overall performance.",
-  },
-  {
-    id: "center" as const,
-    image: "/services/panel-center.png",
-    icon: "/services/icon-center.png",
-    imageAlt: "Business professional looking through a telescope",
-    title: "Growth & Expansion",
-    description:
-      "Identify opportunities, enter new markets, and scale with confidence.",
-  },
-  {
-    id: "right" as const,
-    image: "/services/panel-right.png",
-    icon: "/services/icon-right.png",
-    imageAlt: "Bridge spanning a gap in the clouds",
-    title: "Strategic Planning",
-    description:
-      "Develop long-term business strategies aligned with your vision and objectives.",
-  },
+    {
+        id: "left" as const,
+        image: "src\\assets\\core_services\\1d84cbe92d36f9c2b891f5dcae949da239506822.png",
+        icon: "src\\assets\\core_services\\icon-left.png",
+        imageAlt: "Two hands reaching toward each other",
+        title: "Operational Excellence",
+        description:
+            "Optimize workflows, reduce inefficiencies, and improve overall performance.",
+    },
+    {
+        id: "center" as const,
+        image: "src\\assets\\core_services\\9267857847b5572d6414e17f452b7e0f33fe66f1.png",
+        icon: "src\\assets\\core_services\\icon-center.png",
+        imageAlt: "Business professional looking through a telescope",
+        title: "Growth & Expansion",
+        description:
+            "Identify opportunities, enter new markets, and scale with confidence.",
+    },
+    {
+        id: "right" as const,
+        image: "src\\assets\\core_services\\a08c26c29fc7fa4f10444c0a841489d5effde09b.png",
+        icon: "src\\assets\\core_services\\icon-right.png",
+        imageAlt: "Bridge spanning a gap in the clouds",
+        title: "Strategic Planning",
+        description:
+            "Develop long-term business strategies aligned with your vision and objectives.",
+    },
 ] as const;
-
 export const INSIGHTS_SECTION = {
   eyebrow: "Latest Insights",
   title: "Business Trends, Strategies & Expert Advice",
