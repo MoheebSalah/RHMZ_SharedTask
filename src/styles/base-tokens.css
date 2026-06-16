@@ -1,0 +1,94 @@
+/**
+ * Shared design tokens for hero, footer, buttons, and layout.
+ * Sourced from react-app/src/styles/tokens.css
+ */
+@theme {
+  --color-gray: #d3d3d3;
+  --color-red-1: #de3b36;
+  --color-red-2: #bc1618;
+  --color-red-3: #a81317;
+  --color-red-4: #660806;
+  --color-obsidian: #15191c;
+
+  --text-title: 80px;
+  --text-title--line-height: 80px;
+  --text-header-1: 48px;
+  --text-header-1--line-height: 52px;
+  --text-header-2: 32px;
+  --text-header-2--line-height: 42px;
+  --text-header-3: 24px;
+  --text-header-3--line-height: 31px;
+  --text-header-4: 20px;
+  --text-header-4--line-height: 27px;
+  --text-body-1: 18px;
+  --text-body-1--line-height: 25px;
+  --text-body-2: 16px;
+  --text-body-2--line-height: 23px;
+  --text-body-3: 14px;
+  --text-body-3--line-height: 21px;
+  --text-btn-1: 18px;
+  --text-btn-1--line-height: 25px;
+  --text-btn-2: 16px;
+  --text-btn-2--line-height: 23px;
+  --text-btn-3: 14px;
+  --text-btn-3--line-height: 21px;
+
+  --spacing-stack-xs: 8px;
+  --spacing-stack-sm: 12px;
+  --spacing-stack-md: 16px;
+  --spacing-stack-lg: 24px;
+  --spacing-stack-xl: 32px;
+  --spacing-stack-2xl: 40px;
+  --spacing-stack-3xl: 48px;
+
+  --radius-sm: 4px;
+  --radius-lg: 12px;
+
+  --container-max: 1280px;
+
+  --navbar-height: 72px;
+  --navbar-max-width: 1728px;
+  --navbar-padding-y: 16px;
+  --navbar-padding-x: 200px;
+  --navbar-logo-height: 40px;
+  --navbar-logo-gap: 13px;
+  --navbar-nav-width: 289px;
+  --navbar-nav-height: 25px;
+  --navbar-nav-gap: 40px;
+  --navbar-btn-width: 106px;
+  --navbar-btn-height: 37px;
+  --navbar-btn-padding-y: 8px;
+  --navbar-btn-padding-x: 16px;
+
+  --hero-section-padding-y-sm: 48px;
+  --hero-section-padding-y: 80px;
+  --hero-title-max-width: 1100px;
+  --hero-title-gap: 40px;
+  --hero-image-width: 1328px;
+  --hero-image-height: 460px;
+  --hero-image-radius: 8px;
+
+  --footer-section-max-width: 1728px;
+  --footer-section-height: 893px;
+  --footer-section-padding-top: 40px;
+  --footer-section-gap: 200px;
+  --footer-hero-padding-x: 200px;
+  --footer-hero-gap: 496px;
+  --footer-hero-left-width: 529px;
+  --footer-hero-right-width: 542px;
+  --footer-hero-content-gap: 20px;
+  --footer-blur-height: 465px;
+  --footer-blur-padding-y: 40px;
+  --footer-blur-padding-x: 200px;
+  --footer-blur-gap: 53px;
+  --footer-links-max-width: 1328px;
+  --footer-links-columns-gap: 241px;
+  --footer-column-gap: 12px;
+  --footer-bottom-height: 96px;
+  --footer-brand-gap: 18.2px;
+  --footer-social-gap: 20px;
+  --footer-copyright-gap: 20px;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "DM Serif Display", Georgia, serif;
+}

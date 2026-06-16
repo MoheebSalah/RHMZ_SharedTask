@@ -274,7 +274,6 @@ export const FOOTER_HERO = {
   summary:
     "Expert consulting services focused on growth, efficiency, and long-term success.",
   tagline: "Your partner in business growth.",
-  backgroundImage: "/footer/background.png",
 } as const;
 
 export const FOOTER_COLUMNS: FooterColumnData[] = [
