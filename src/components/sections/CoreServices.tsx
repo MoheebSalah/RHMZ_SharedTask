@@ -1,4 +1,4 @@
-import { act, useState } from "react";
+import { useState } from "react";
 import { SERVICES_PANELS } from "../../lib/constants";
 import { colors, typography } from "../../lib/design-tokens"
 
@@ -8,7 +8,7 @@ const CoreServices = () => {
     const [active, setActive] = useState(0);
 
     return (
-        <div className="flex items-center justify-center mx-auto w-full ">
+        <div className="flex items-center justify-center mx-auto w-full mb-50 ">
             <div className="flex flex-col justify-center space-y-6 w-[1478px]">
 
                 {/* header of the section */}

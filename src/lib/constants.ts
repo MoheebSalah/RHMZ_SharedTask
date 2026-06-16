@@ -186,7 +186,7 @@ export const INSIGHTS_SECTION = {
 
 export const INSIGHTS_BLOG_POSTS = [
   {
-    image: "/insights/blog-1.png",
+    image: "src\\assets\\insights\\blog-1.png",
     imageAlt: "Illustration of an airplane taking off from an airport runway",
     title: "5 Signs Your Business Needs a Strategic Review",
     description:
@@ -194,7 +194,7 @@ export const INSIGHTS_BLOG_POSTS = [
     href: "#",
   },
   {
-    image: "/insights/blog-2.png",
+    image: "src\\assets\\insights\\blog-2.png",
     imageAlt: "Business professional looking through a telescope from a blue platform",
     title: "How Process Optimization Increases Profitability",
     description:
@@ -202,7 +202,7 @@ export const INSIGHTS_BLOG_POSTS = [
     href: "#",
   },
   {
-    image: "/insights/blog-3.png",
+    image: "src\\assets\\insights\\blog-3.png",
     imageAlt: "Silhouette walking toward a bright doorway on a blue background",
     title: "Building a Scalable Business for Long-Term Success",
     description:
