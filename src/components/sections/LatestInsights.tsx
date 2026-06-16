@@ -12,10 +12,12 @@ const LatestInsights = () => {
                         Latest Insights
                     </h4>
                     <div className="flex justify-between">
-                        <h1 className={`items-start justify-start w-2/5 h-full font-lingo text-[${typography.header1.fontSize}px] text-[${colors.subtext}] `}>
+                        <h1 className={`items-start justify-start w-2/5 h-full font-lingo text-[${typography.header1.fontSize}px] `}>
                             Business Trends, Strategies & Expert Advice
                         </h1>
-                        <p className={`w-1/3 h-1/2 items-end justify-end font-outfit text-[${typography.body1.fontSize}px]`}> Stay informed with practical insights and proven approaches from experienced consultants.</p>
+                        <div className="flex items-end justify-end w-1/3">
+                            <p className={` flex items-end justify-end font-outfit text-[${colors.subtext}] text-[${typography.body1.fontSize}px]`}> Stay informed with practical insights and proven approaches from experienced consultants.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -24,7 +26,7 @@ const LatestInsights = () => {
                     {
                         INSIGHTS_BLOG_POSTS.map(post => {
                             return (
-                                <div className="rounded-md overflow-hidden w-[468px] flex flex-col space-y-4 group cursor-pointer transition-all ease-in-out duration-200">
+                                <div className="rounded-xl overflow-hidden w-[468px] flex flex-col space-y-4 group cursor-pointer transition-all ease-in-out duration-200">
                                     <div className="overflow-hidden rounded-md">
                                         <img
                                             src={post.image}
@@ -32,7 +34,7 @@ const LatestInsights = () => {
                                             alt="" />
                                     </div>
                                     <h4 className={`text-[20px]  
-                                    font-medium font-outfit group-hover:text-[${colors.red1}]`}>{post.title}</h4>
+                                    font-medium font-outfit group-hover:text-[#E5383B]`}>{post.title}</h4>
                                     <p className={`font-outfit text-[18px]
                                     text-[${colors.subtext}]`}>{post.description}</p>
                                 </div>
@@ -41,7 +43,7 @@ const LatestInsights = () => {
                     }
                 </div>
                 <div className="mt-6 font-outfit flex flex-row gap-4 group" >
-                    <button className={`group-hover:text-[${colors.red1}] transition-all ease-in-out duration-200 cursor-pointer`} >
+                    <button className={`group-hover:text-[#E5383B] transition-all ease-in-out duration-200 cursor-pointer`} >
                         Explore more blogs
                     </button>
                     <div className="items-center justify-center flex">
