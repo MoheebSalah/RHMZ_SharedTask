@@ -1,3 +1,10 @@
+import FaqSection from "../components/sections/faq/faqSection"
+import ImpactSection2 from "../components/sections/impact/impactSection2"
 export default function LandingPage() {
-  return <div>Landing Page</div>;
+  return (
+    <main>
+      <FaqSection />
+      <ImpactSection2 />
+    </main>
+  )
 }

@@ -1,4 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
+
+// Display serif — "Default Lingo" with web-safe fallbacks (DM Serif Display is
+// loaded in index.html). Used only for the "title" style (the section heading),
+// per the design's typography spec.
+const FONT_SERIF = "'Default Lingo', 'DM Serif Display', Georgia, serif";
+
+// All non-display text uses Outfit @400 (loaded in index.html). Set once on the
+// <section> so every child inherits it; serif elements override inline.
+const FONT_SANS = "'Outfit', 'Inter', sans-serif";
 
 const FAQS = [
   {
@@ -32,20 +41,26 @@ export function FaqSection() {
 
   return (
     // We add a min-height so that opening an item doesn't cause the entire page to jump (fixed section height).
-    <section className="py-16 sm:py-24 bg-white w-full min-h-[700px] flex flex-col justify-center">
+    <section
+      className="py-10 sm:py-12 bg-white w-full min-h-[520px] flex flex-col justify-center"
+      style={{ fontFamily: FONT_SANS }}
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        
+
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-4 mb-8">
           <div className="max-w-2xl">
-            <h3 className="text-sm font-semibold tracking-wider text-gray-500 mb-4">
+            <h3 className="text-[14px] leading-[21px] text-black mb-3">
               Frequently Asked Questions
             </h3>
-            <h2 className="text-4xl md:text-5xl font-serif text-gray-900 leading-tight">
+            <h2
+              className="text-[32px] md:text-[40px] leading-[1.05] text-black"
+              style={{ fontFamily: FONT_SERIF }}
+            >
               Answers to Common Questions
             </h2>
           </div>
-          <div className="max-w-md text-gray-500 text-lg leading-relaxed md:pb-2">
+          <div className="max-w-md text-black/70 text-[14px] leading-[21px] md:pb-1">
             Everything you need to know before working with our consulting team.
           </div>
         </div>
@@ -65,8 +80,8 @@ export function FaqSection() {
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? -1 : i)}
                   aria-expanded={isOpen}
-                  className={`flex w-full items-center justify-between px-6 py-5 md:px-8 md:py-6 text-left text-base md:text-lg font-medium transition-colors duration-300 ${
-                    isOpen ? "text-[#F5F3F4]" : "text-gray-800"
+                  className={`flex w-full items-center justify-between px-6 py-4 md:px-8 md:py-5 text-left text-[16px] md:text-[18px] leading-[25px] transition-colors duration-300 ${
+                    isOpen ? "text-[#F5F3F4]" : "text-black"
                   }`}
                 >
                   {item.q}
@@ -79,7 +94,7 @@ export function FaqSection() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="px-6 pb-6 md:px-8 md:pb-8 text-base md:text-lg text-[#F5F3F4] leading-relaxed">
+                    <div className="px-6 pb-5 md:px-8 md:pb-6 text-[16px] leading-[23px] text-[#F5F3F4]">
                       {item.a}
                     </div>
                   </div>

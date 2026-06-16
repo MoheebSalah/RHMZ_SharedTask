@@ -1,4 +1,40 @@
 @import "tailwindcss";
+@import "./styles/tokens.css";
+
+/* Surface the token vars as Tailwind utilities (font-serif, text-subtext,
+   bg-impact-short, …) without re-emitting the vars — they live in tokens.css. */
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --font-display: var(--font-display);
+
+  --color-white: var(--color-white);
+  --color-white2: var(--color-white2);
+  --color-gray: var(--color-gray);
+  --color-gray2: var(--color-gray2);
+  --color-red1: var(--color-red1);
+  --color-red2: var(--color-red2);
+  --color-red3: var(--color-red3);
+  --color-red4: var(--color-red4);
+  --color-text: var(--color-text);
+  --color-obsidian: var(--color-obsidian);
+  --color-subtext: var(--color-subtext);
+  --color-quote-subtext: var(--color-quote-subtext);
+
+  --color-impact-short: var(--color-impact-short);
+  --color-impact-mid: var(--color-impact-mid);
+  --color-impact-tall: var(--color-impact-tall);
+}
+
+@keyframes nudge-x {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}
 
 @layer base {
   html {
