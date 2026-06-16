@@ -1,0 +1,128 @@
+:root {
+  --color-text: #0b090a;
+  --color-title: #0b090a;
+  --color-subtext: #696366;
+  --color-quote-subtext: #696366;
+  --color-white-2: #f5f3f4;
+  --color-gray-2: #b1a7a6;
+
+  --font-outfit: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "DM Serif Display", ui-serif, Georgia, serif;
+
+  --radius-md: 8px;
+
+  --spacing-container-x-sm: 16px;
+  --spacing-container-x: 32px;
+  --spacing-section-y-sm: 32px;
+  --spacing-section-y: clamp(40px, 5vh, 64px);
+  /* --spacing-stack-2xl: clamp(20px, 3vh, 32px); */
+
+  --feature-section-max-width: 1728px;
+  --feature-section-padding-x: clamp(16px, 6vw, 120px);
+
+  --testimonials-outer-gap: clamp(20px, 3vh, 32px);
+  --testimonials-header-gap: 12px;
+  --testimonials-header-width: 100%;
+  --testimonials-title-width: min(100%, 380px);
+  --testimonials-description-width: min(100%, 360px);
+  --testimonials-section-width: 100%;
+  --testimonials-section-gap: clamp(12px, 2vh, 20px);
+  --testimonials-photos-height: 350px;
+  --testimonials-photos-gap: 24px;
+  --testimonials-photo-active-width: 880px;
+  --testimonials-photo-inactive-width: 200px;
+  --testimonials-photo-mobile-width: 200px;
+  --testimonials-mobile-card-width: 88vw;
+  --testimonials-mobile-card-height: clamp(420px, 62vh, 520px);
+  --testimonials-mobile-card-radius: 12px;
+  --testimonials-mobile-carousel-gap: 12px;
+  --testimonials-mobile-scroll-padding: var(--spacing-container-x-sm);
+  --testimonials-mobile-overlay-inset: 12px;
+  --testimonials-frame-padding: clamp(16px, 2.5vw, 24px);
+  --testimonials-quote-width: clamp(80px, 12vw, 180px);
+  --testimonials-quote-height: clamp(64px, 9vw, 140px);
+  --testimonials-quote-mobile-width: 72px;
+  --testimonials-quote-mobile-height: 56px;
+  --testimonials-content-width: min(100%, 720px);
+  --testimonials-attribution-width: 214px;
+  --testimonials-attribution-gap: 6px;
+  --testimonials-panel-transition: 400ms;
+  --testimonials-inactive-overlay: #161a1d;
+  --testimonials-inactive-overlay-opacity: 0.6;
+  --testimonials-content-padding-left: clamp(12px, 3vw, 40px);
+  --testimonials-frame-height: 400px;
+}
+
+@theme {
+  --font-outfit: var(--font-outfit);
+  --font-serif: var(--font-serif);
+
+  --color-text: var(--color-text);
+  --color-title: var(--color-title);
+  --color-subtext: var(--color-subtext);
+  --color-quote-subtext: var(--color-quote-subtext);
+  --color-white-2: var(--color-white-2);
+}
+
+@utility font-outfit {
+  font-family: var(--font-outfit);
+}
+
+@utility font-serif-display {
+  font-family: var(--font-serif);
+}
+
+@utility text-header-1 {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3.5vw, 40px);
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+@utility text-header-3 {
+  font-family: var(--font-outfit);
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+@utility text-header-4 {
+  font-family: var(--font-outfit);
+  font-size: clamp(14px, 1.5vw, 18px);
+  line-height: 1.35;
+  font-weight: 400;
+}
+
+@utility text-body-1 {
+  font-family: var(--font-outfit);
+  font-size: clamp(14px, 1.4vw, 16px);
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+@utility text-testimonial-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 2.2vw, 32px);
+  line-height: 1.15;
+  font-weight: 400;
+}
+
+@utility text-title {
+  color: var(--color-title);
+}
+
+@utility text-text {
+  color: var(--color-text);
+}
+
+@utility text-subtext {
+  color: var(--color-subtext);
+}
+
+@utility text-quote-subtext {
+  color: var(--color-quote-subtext);
+}
+
+@utility bg-white-2 {
+  background-color: var(--color-white-2);
+}
