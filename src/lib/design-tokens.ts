@@ -10,10 +10,10 @@ export const colors = {
   red1: "#de3b36",
   red2: "#bc1618",
   red3: "#a81317",
-  red4: "#660806",
+  red4: "#660708",
   text: "#000000",
   obsidian: "#15191c",
-  subtext: "#666062",
+  subtext: "#696366",
   quoteSubtext: "#696366",
 } as const;
 

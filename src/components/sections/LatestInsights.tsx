@@ -12,10 +12,12 @@ const LatestInsights = () => {
                         Latest Insights
                     </h4>
                     <div className="flex justify-between">
-                        <h1 className={`items-start justify-start w-2/5 h-full font-lingo text-[${typography.header1.fontSize}px] text-[${colors.subtext}] `}>
+                        <h1 className={`items-start justify-start w-2/5 h-full font-lingo text-[${typography.header1.fontSize}px] `}>
                             Business Trends, Strategies & Expert Advice
                         </h1>
-                        <p className={`w-1/3 h-1/2 items-end justify-end font-outfit text-[${typography.body1.fontSize}px]`}> Stay informed with practical insights and proven approaches from experienced consultants.</p>
+                        <div className="flex items-end justify-end w-1/3">
+                            <p className={` flex items-end justify-end font-outfit text-[${colors.subtext}] text-[${typography.body1.fontSize}px]`}> Stay informed with practical insights and proven approaches from experienced consultants.</p>
+                        </div>
                     </div>
                 </div>
 
