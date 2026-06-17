@@ -1,0 +1,12 @@
+.footer-section {
+  background-color: #0b090a;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.footer-blur-panel {
+  background: rgb(46 55 61 / 50%);
+  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
+}

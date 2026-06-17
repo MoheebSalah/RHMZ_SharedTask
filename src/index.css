@@ -1,8 +1,11 @@
 @import "tailwindcss";
+@import "./styles/base-tokens.css";
 @import "./styles/tokens.css";
+@import "./styles/typography.css";
+@import "./styles/footer.css";
+@import "./styles/partners.css";
 
-/* Surface the token vars as Tailwind utilities (font-serif, text-subtext,
-   bg-impact-short, …) without re-emitting the vars — they live in tokens.css. */
+/* Surface token vars as Tailwind utilities (text-subtext, bg-white-2, …) */
 @theme inline {
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
@@ -26,26 +29,20 @@
   --color-impact-tall: var(--color-impact-tall);
 }
 
-@keyframes nudge-x {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(6px);
-  }
-}
-
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
   body {
-    @apply bg-white font-sans text-black antialiased;
+    @apply bg-white font-sans text-text antialiased;
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
   *:focus-visible {
-    @apply outline-2 outline-offset-2 outline-gray-900;
+    @apply outline-2 outline-offset-2 outline-obsidian;
   }
 }
