@@ -1,4 +1,8 @@
-export default function Logo() {
+interface LogoProps {
+  invert?: boolean;
+}
+
+export default function Logo({ invert }: LogoProps) {
   return (
     <a
       href="#home"
@@ -10,10 +14,10 @@ export default function Logo() {
         alt=""
         width={40}
         height={40}
-        className="h-[var(--navbar-logo-height)] w-auto shrink-0"
+        className={`h-[var(--navbar-logo-height)] w-auto shrink-0 ${invert ? 'brightness-0 invert' : ''}`}
         aria-hidden="true"
       />
-      <span className="whitespace-nowrap text-body-1 font-bold leading-[var(--text-body-1--line-height)] text-text">
+      <span className={`whitespace-nowrap text-body-1 font-bold leading-[var(--text-body-1--line-height)] ${invert ? 'text-white' : 'text-text'}`}>
         BussinesFlex
       </span>
     </a>
