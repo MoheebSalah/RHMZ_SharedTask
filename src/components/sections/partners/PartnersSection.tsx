@@ -15,11 +15,16 @@ export default function PartnersSection() {
         >
           <h2
             id="partners-heading"
-            className="shrink-0 text-body-2 leading-[var(--text-body-2--line-height)] text-subtext"
+            className="w-full text-body-2 leading-[var(--text-body-2--line-height)] text-subtext sm:w-auto sm:shrink-0"
           >
-            {PARTNERS_HEADING.line1}
-            <br />
-            {PARTNERS_HEADING.line2}
+            <span className="sm:hidden">
+              {PARTNERS_HEADING.line1} {PARTNERS_HEADING.line2}
+            </span>
+            <span className="hidden sm:block">
+              {PARTNERS_HEADING.line1}
+              <br />
+              {PARTNERS_HEADING.line2}
+            </span>
           </h2>
 
           <PartnersMarquee />
