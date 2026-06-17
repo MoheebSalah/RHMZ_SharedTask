@@ -1,8 +1,8 @@
-import type { ReactNode } from "react";
+import type { ReactNode } from "react"
 
 interface ContainerProps {
-  children: ReactNode;
-  className?: string;
+  children: ReactNode
+  className?: string
 }
 
 export default function Container({
@@ -15,5 +15,5 @@ export default function Container({
     >
       {children}
     </div>
-  );
+  )
 }

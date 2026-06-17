@@ -1,6 +1,6 @@
-import Container from "../../layout/Container";
-import { PARTNERS_HEADING } from "../../../lib/constants";
-import PartnersMarquee from "./PartnersMarquee";
+import Container from "../../layout/Container"
+import { PARTNERS_HEADING } from "../../../lib/constants"
+import PartnersMarquee from "./PartnersMarquee"
 
 export default function PartnersSection() {
   return (
@@ -31,5 +31,5 @@ export default function PartnersSection() {
         </div>
       </Container>
     </section>
-  );
+  )
 }
