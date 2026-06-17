@@ -10,3 +10,189 @@
   -webkit-backdrop-filter: blur(25px);
   backdrop-filter: blur(25px);
 }
+
+.footer-journey-button {
+  transition:
+    color 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.footer-journey-arrow-wrap,
+.footer-journey-arrow,
+.footer-journey-button-text {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.footer-journey-arrow-wrap {
+  transform: translate3d(0, -2px, 0);
+  transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.footer-journey-arrow {
+  transform: rotate(0deg) translateZ(0);
+  transform-origin: 50% 50%;
+  transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.footer-journey-button-text {
+  transform: translate3d(0, 0, 0);
+  transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.footer-journey-button:hover .footer-journey-arrow-wrap {
+  transform: translate3d(4px, -2px, 0);
+}
+
+.footer-journey-button:hover .footer-journey-arrow {
+  transform: rotate(45deg) translateZ(0);
+}
+
+.footer-journey-button:hover .footer-journey-button-text {
+  transform: translate3d(6px, 0, 0);
+}
+
+/* Footer responsiveness: desktop remains driven by the existing layout. */
+.site-footer a {
+  transition:
+    color 260ms ease,
+    opacity 260ms ease,
+    transform 260ms ease;
+}
+
+.footer-social-row a:hover {
+  opacity: 0.78;
+}
+
+@media (min-width: 1024px) {
+  .footer-links-grid {
+    justify-items: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .footer-brand-shape {
+    display: none;
+  }
+
+  .footer-top-cta,
+  .footer-image-section {
+    background:
+      radial-gradient(circle at 50% 100%, rgb(229 56 59 / 18%), transparent 42%),
+      #0b090a;
+  }
+
+  .footer-cta-row {
+    grid-template-columns: 1fr !important;
+    gap: 48px;
+  }
+
+  .footer-links-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    justify-items: start !important;
+    gap: 48px 72px;
+  }
+
+  .footer-link-column {
+    width: 100% !important;
+  }
+
+  .footer-bottom-row {
+    align-items: center !important;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-footer {
+    margin-top: 80px;
+  }
+
+  .footer-brand-shape {
+    display: none;
+  }
+
+  .footer-top-cta,
+  .footer-image-section {
+    background:
+      radial-gradient(circle at 50% 100%, rgb(229 56 59 / 16%), transparent 46%),
+      #0b090a;
+  }
+
+  .footer-top-cta {
+    text-align: center;
+  }
+
+  .footer-top-cta h2,
+  .footer-image-section h3 {
+    font-size: clamp(30px, 9vw, 38px);
+  }
+
+  .footer-top-cta p,
+  .footer-image-section p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .footer-top-cta button,
+  .footer-journey-button {
+    margin-inline: auto;
+  }
+
+  .footer-cta-row {
+    grid-template-columns: 1fr !important;
+    gap: 44px;
+    text-align: center;
+  }
+
+  .footer-cta-row > div,
+  .footer-cta-row p,
+  .footer-cta-row .footer-journey-button {
+    margin-inline: auto;
+  }
+
+  .footer-links-panel {
+    text-align: center;
+  }
+
+  .footer-links-grid {
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+    gap: 42px;
+  }
+
+  .footer-link-column {
+    width: 100% !important;
+  }
+
+  .footer-bottom-row {
+    align-items: center !important;
+    gap: 36px;
+    text-align: center;
+  }
+
+  .footer-bottom-row a[aria-label="BussinesFlex home"] {
+    justify-content: center;
+  }
+
+  .footer-social-block {
+    align-items: center !important;
+    max-width: 220px;
+  }
+
+  .footer-social-row {
+    justify-content: center !important;
+    gap: 22px;
+  }
+
+  .footer-social-row a {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .footer-social-block p {
+    text-align: center !important;
+  }
+}
