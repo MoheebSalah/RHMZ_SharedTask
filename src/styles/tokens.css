@@ -1,0 +1,38 @@
+/**
+ * CSS custom properties — the runtime mirror of src/lib/design-tokens.ts.
+ * Consumed two ways:
+ *   1. Directly via var(...) in data (see src/lib/constants.ts).
+ *   2. Surfaced as Tailwind utilities through @theme inline in src/index.css.
+ */
+:root {
+  /* Font families (loaded in index.html) */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Default Lingo", "DM Serif Display", Georgia, serif;
+  --font-display: "Outfit", "Inter", sans-serif;
+
+  /* Color palette */
+  --color-white: #ffffff;
+  --color-white2: #f5f3f4;
+  --color-gray: #d3d3d3;
+  --color-gray2: #b2a8a7;
+  --color-red1: #de3b36;
+  --color-red2: #bc1618;
+  --color-red3: #a81317;
+  --color-red4: #660806;
+  --color-text: #000000;
+  --color-obsidian: #15191c;
+  --color-subtext: #666062;
+  --color-quote-subtext: #696366;
+
+  /* Feature Two — Impact card backgrounds (darkest → brightest) */
+  --color-impact-short: #a4161a;
+  --color-impact-mid: #ba181b;
+  --color-impact-tall: #e5383b;
+
+  /* Impact card heights — track the card width to preserve the Figma
+     proportions (442.67 × 700 → ratio 1.581), capped at the design's 700px.
+     Container = min(viewport - 48px side padding, 1328px); each card = /3. */
+  --impact-card-tall-height: calc(min(100vw - 48px, 1328px) / 3 * 1.581);
+  --impact-card-mid-height: calc(var(--impact-card-tall-height) * 6 / 7);
+  --impact-card-short-height: calc(var(--impact-card-tall-height) * 5 / 7);
+}

@@ -1,16 +1,10 @@
-import FeatureOne from "../components/sections/feature-one/FeatureOneSection";
-import CTASection from "../components/layout/footer/CTASection";
-import FooterHero from "../components/layout/footer/FooterHero";
-import FooterBottom from "../components/layout/footer/FooterBottom";
-// import FooterBottom from "../components/layout/footer/FooterBottom";
-
-
-
+import FaqSection from "../components/sections/faq/faqSection"
+import ImpactSection2 from "../components/sections/impact/impactSection2"
 export default function LandingPage() {
-  return <div>
-    <FeatureOne/>
-          <CTASection />
-          <FooterHero/>
-          <FooterBottom/>
-  </div>;
+  return (
+    <main>
+      <FaqSection />
+      <ImpactSection2 />
+    </main>
+  )
 }
