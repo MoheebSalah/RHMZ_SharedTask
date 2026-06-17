@@ -1,0 +1,41 @@
+@keyframes partners-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@layer components {
+  .partners-track {
+    width: max-content;
+    animation: partners-marquee var(--partners-marquee-duration, 24s) linear infinite;
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .partners-track {
+      animation: none;
+    }
+  }
+
+  .partners-viewport {
+    overflow-x: clip;
+    contain: layout paint;
+    mask-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgb(0 0 0 / 100%) 8%,
+      rgb(0 0 0 / 100%) 92%,
+      transparent 100%
+    );
+  }
+}
+
+@media (max-width: 639px) {
+  :root {
+    --partners-track-height: var(--partners-track-height-mobile);
+  }
+}

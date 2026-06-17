@@ -68,6 +68,17 @@
   --hero-image-height: 460px;
   --hero-image-radius: 8px;
 
+  --partners-section-max-width: 1328px;
+  --partners-section-height: 102px;
+  --partners-section-padding: 20px;
+  --partners-section-gap: 40px;
+  --partners-section-gap-mobile: 24px;
+  --partners-track-width: 1037px;
+  --partners-track-height: 52px;
+  --partners-track-height-mobile: 40px;
+  --partners-track-opacity: 0.2;
+  --partners-marquee-duration: 24s;
+
   --footer-section-max-width: 1728px;
   --footer-section-height: 893px;
   --footer-section-padding-top: 40px;
