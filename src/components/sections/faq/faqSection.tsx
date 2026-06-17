@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useState } from "react"
 
 // Display serif — "Default Lingo" with web-safe fallbacks (DM Serif Display is
 // loaded in index.html). Used only for the "title" style (the section heading),
 // per the design's typography spec.
-const FONT_SERIF = "'Default Lingo', 'DM Serif Display', Georgia, serif";
+const FONT_SERIF = "'Default Lingo', 'DM Serif Display', Georgia, serif"
 
 // All non-display text uses Outfit @400 (loaded in index.html). Set once on the
 // <section> so every child inherits it; serif elements override inline.
-const FONT_SANS = "'Outfit', 'Inter', sans-serif";
+const FONT_SANS = "'Outfit', 'Inter', sans-serif"
 
 const FAQS = [
   {
@@ -34,10 +34,10 @@ const FAQS = [
     q: "How do I get started?",
     a: "Simply book a free consultation. We'll discuss your goals, assess your needs, and outline how we can help you move forward.",
   },
-];
+]
 
 export function FaqSection() {
-  const [openIndex, setOpenIndex] = useState<number>(1);
+  const [openIndex, setOpenIndex] = useState<number>(1)
 
   return (
     // We add a min-height so that opening an item doesn't cause the entire page to jump (fixed section height).
@@ -46,7 +46,6 @@ export function FaqSection() {
       style={{ fontFamily: FONT_SANS }}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-4 mb-8">
           <div className="max-w-2xl">
@@ -57,18 +56,19 @@ export function FaqSection() {
               className="text-[32px] md:text-[40px] leading-[1.05] text-black"
               style={{ fontFamily: FONT_SERIF }}
             >
-              Answers to Common Questions
+              Answers to Common <br></br>Questions
             </h2>
           </div>
           <div className="max-w-md text-black/70 text-[14px] leading-[21px] md:pb-1">
-            Everything you need to know before working with our consulting team.
+            Everything you need to know before working with<br></br> our
+            consulting team.
           </div>
         </div>
 
         {/* Accordion Container */}
         <div className="flex flex-col rounded-md overflow-hidden shadow-sm border border-gray-100">
           {FAQS.map((item, i) => {
-            const isOpen = i === openIndex;
+            const isOpen = i === openIndex
             return (
               <div
                 key={item.q}
@@ -81,16 +81,18 @@ export function FaqSection() {
                   onClick={() => setOpenIndex(isOpen ? -1 : i)}
                   aria-expanded={isOpen}
                   className={`flex w-full items-center justify-between px-6 py-4 md:px-8 md:py-5 text-left text-[16px] md:text-[18px] leading-[25px] transition-colors duration-300 ${
-                    isOpen ? "text-[#F5F3F4]" : "text-black"
+                    isOpen ? "text-[#F5F3F4]/70" : "text-black"
                   }`}
                 >
                   {item.q}
                 </button>
-                
+
                 {/* Smooth expansion animation using CSS Grid */}
                 <div
                   className={`grid transition-all duration-300 ease-in-out ${
-                    isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                    isOpen
+                      ? "grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0"
                   }`}
                 >
                   <div className="overflow-hidden">
@@ -100,12 +102,12 @@ export function FaqSection() {
                   </div>
                 </div>
               </div>
-            );
+            )
           })}
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default FaqSection;
+export default FaqSection
