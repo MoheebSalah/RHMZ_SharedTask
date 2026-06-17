@@ -1,7 +1,7 @@
-import TestimonialsSection from "./components/sections/testimonials/TestimonialsSection";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
-  return <TestimonialsSection />;
+  return <LandingPage />;
 }
 
 export default App;

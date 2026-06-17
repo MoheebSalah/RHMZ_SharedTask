@@ -5,7 +5,7 @@
 @import "./styles/footer.css";
 @import "./styles/partners.css";
 
-/* Surface token vars as Tailwind utilities (bg-impact-short, text-subtext, …) */
+/* Surface token vars as Tailwind utilities (text-subtext, bg-white-2, …) */
 @theme inline {
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
@@ -27,16 +27,6 @@
   --color-impact-short: var(--color-impact-short);
   --color-impact-mid: var(--color-impact-mid);
   --color-impact-tall: var(--color-impact-tall);
-}
-
-@keyframes nudge-x {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(6px);
-  }
 }
 
 @layer base {
