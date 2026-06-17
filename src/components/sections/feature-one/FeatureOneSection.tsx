@@ -1,24 +1,6 @@
 import React from "react";
-import feature4 from "../../../assets/images/feature-4.jpg";
-import feature2 from "../../../assets/images/feature-2.png";
-import feature1 from "../../../assets/images/feature-1.png";
-import feature3 from "../../../assets/images/feature-3.png";
-
-// ─── Constants ───────────────────────────────────────────────────────────────
-
-const FEATURE_ONE = {
-  eyebrow: "Why Choose Us",
-  title: "Everything You Need to Build a Stronger Business",
-  description:
-    "From strategic planning to operational optimization, we provide the expertise and guidance needed to help your business grow with confidence.",
-} as const;
-
-const FEATURE_ONE_IMAGES = [
-  { src: feature4, alt: "Team members reviewing analytics on a tablet" },
-  { src: feature2, alt: "Professional working on a laptop in a modern chair" },
-  { src: feature1, alt: "Colleagues collaborating at a height-adjustable desk" },
-  { src: feature3, alt: "Team members working together on a lounge sofa" },
-] as const;
+import { FEATURE_ONE, FEATURE_ONE_IMAGES } from "../../../lib/constants";
+import SectionContainer from "../../layout/SectionContainer";
 
 // ─── Design Tokens ───────────────────────────────────────────────────────────
 
@@ -31,9 +13,7 @@ const colors = {
 } as const;
 
 const featureOne = {
-  sectionMaxWidth: 1728,
   sectionGap: 32,
-  sectionPaddingX: 200,
   sectionPaddingY: 56,
   headerGap: 16,
   gridGap: 16,
@@ -196,14 +176,13 @@ const FeatureOne: React.FC = () => {
 
   return (
     <section
+      className="w-full bg-white"
       style={{
-        ...styles.section,
-        paddingLeft: isMobile ? 20 : featureOne.sectionPaddingX,
-        paddingRight: isMobile ? 20 : featureOne.sectionPaddingX,
         paddingTop: isMobile ? 40 : featureOne.sectionPaddingY,
         paddingBottom: isMobile ? 40 : featureOne.sectionPaddingY,
       }}
     >
+      <SectionContainer>
       <div style={styles.inner}>
 
         {/* ── Header ── */}
@@ -334,6 +313,7 @@ const FeatureOne: React.FC = () => {
         )}
 
       </div>
+      </SectionContainer>
     </section>
   );
 };
@@ -349,14 +329,6 @@ const ImagePlaceholder: React.FC<{ label: string }> = ({ label }) => (
 // ─── Styles ──────────────────────────────────────────────────────────────────
 
 const styles: Record<string, React.CSSProperties> = {
-  section: {
-    width: "100%",
-    maxWidth: featureOne.sectionMaxWidth,
-    margin: "0 auto",
-    backgroundColor: colors.white,
-    boxSizing: "border-box",
-  },
-
   inner: {
     width: "100%",
     display: "flex",
