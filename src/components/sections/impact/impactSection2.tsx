@@ -1,9 +1,6 @@
 import { useEffect, useRef, useState } from "react"
-
-// Display serif — "Default Lingo" with web-safe fallbacks (DM Serif Display is
-// loaded in index.html). Used only for the "title" style (big numbers + the
-// section heading), per the design's typography spec.
-const FONT_SERIF = "'Default Lingo', 'DM Serif Display', Georgia, serif";
+import { FEATURE_TWO, FEATURE_TWO_CARDS } from "../../../lib/constants"
+import SectionContainer from "../../layout/SectionContainer";
 
 // All non-display text uses Outfit @400 (loaded in index.html). Set once on the
 // <section> so every child inherits it; serif elements override inline.
@@ -46,11 +43,12 @@ export function ImpactSection2() {
   const [activeIndex, setActiveIndex] = useState(0)
   const scrollRef = useRef<HTMLDivElement>(null)
 
+  // Track which card is centered on mobile so the dots stay in sync with swipes.
   useEffect(() => {
     const el = scrollRef.current
     if (!el) return
     const handleScroll = () => {
-      const cardWidth = el.scrollWidth / STATS.length
+      const cardWidth = el.scrollWidth / FEATURE_TWO_CARDS.length
       setActiveIndex(Math.round(el.scrollLeft / cardWidth))
     }
     el.addEventListener("scroll", handleScroll, { passive: true })
@@ -74,28 +72,31 @@ export function ImpactSection2() {
           </p>
         </div>
 
-        {/* 
+        {/*
           Cards Container:
-          - Mobile: Horizontal scroll (flex-row, overflow-x-auto, snap scrolling)
+          - Mobile: One full-width card per screen (snap scrolling) + dots below
           - Desktop: Top-aligned, no gap, increasing heights
         */}
-        <div ref={scrollRef} className="flex flex-row md:flex-row items-stretch md:items-start gap-0 md:gap-0 overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-          {STATS.map((stat, i) => {
-            const iconSrc = stat.icon
+        <div
+          ref={scrollRef}
+          className="flex flex-row md:flex-row items-stretch md:items-start gap-0 md:gap-0 overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+        >
+          {FEATURE_TWO_CARDS.map((card, i) => {
+            const heightClass = IMPACT_CARD_HEIGHT_CLASSES[i];
 
             // Define dynamic border radius based on position
-            let borderClasses = "rounded-md" // Default for mobile (8px)
+            let borderClasses = "rounded-md"; // Default for mobile (6px)
 
             if (i === 0) {
-              // Left Card: Desktop bottom-left and top-left rounded (8px). Right edges square.
-              borderClasses += " md:rounded-none md:rounded-l-md"
+              // Left Card: Desktop bottom-left and top-left rounded. Right edges square.
+              borderClasses += " md:rounded-none md:rounded-l-md";
             } else if (i === 1) {
-              // Middle Card: Desktop top-left, top-right, bottom-right square. Bottom-left rounded (8px) because it hangs below Card 1.
-              borderClasses += " md:rounded-none md:rounded-bl-md"
-            } else if (i === STATS.length - 1) {
-              // Right Card: Desktop right edges rounded (8px). Top-left square. Bottom-left rounded (8px) because it hangs below Card 2.
+              // Middle Card: Desktop top-left, top-right, bottom-right square. Bottom-left rounded because it hangs below Card 1.
+              borderClasses += " md:rounded-none md:rounded-bl-md";
+            } else if (i === FEATURE_TWO_CARDS.length - 1) {
+              // Right Card: Desktop right edges rounded. Top-left square. Bottom-left rounded because it hangs below Card 2.
               borderClasses +=
-                " md:rounded-none md:rounded-r-lg md:rounded-bl-md"
+                " md:rounded-none md:rounded-r-md md:rounded-bl-md";
             }
 
             return (
@@ -104,7 +105,7 @@ export function ImpactSection2() {
                 className={`group relative flex flex-col justify-between p-8 shrink-0 snap-center text-white
                   [container-type:inline-size]
                   w-[100vw] md:w-full md:flex-1
-                  min-h-[350px] ${stat.heightClass}
+                  min-h-[350px] ${heightClass}
                   ${borderClasses}
                   transition-all duration-300 ease-out
                   hover:-translate-y-1 hover:scale-[1.01] hover:z-10 hover:shadow-lg hover:shadow-black/10
@@ -128,11 +129,10 @@ export function ImpactSection2() {
                 <div className="flex flex-col gap-6 md:gap-8 mt-auto">
                   {/* Number rendered as the design's PNG (off-white glyphs on a
                       transparent background). Width tracks the card via a
-                      container query (cqw = % of the card's content box) so it
-                      scales the same way the old text did; height is auto. */}
+                      container query (cqw = % of the card's content box). */}
                   <img
-                    src={stat.valueImg}
-                    alt={stat.value}
+                    src={card.statImg}
+                    alt={card.stat}
                     className="w-[90cqw] h-auto object-contain object-left"
                   />
 
@@ -160,14 +160,14 @@ export function ImpactSection2() {
             (FeatureOne) carousel: round 8px dots, active is black and
             scaled up, inactive are light gray. */}
         <div className="flex md:hidden justify-center items-center gap-2 mt-5">
-          {STATS.map((_, i) => (
+          {FEATURE_TWO_CARDS.map((_, i) => (
             <button
               key={i}
               aria-label={`Go to card ${i + 1}`}
               onClick={() => {
                 const el = scrollRef.current
                 if (!el) return
-                const cardWidth = el.scrollWidth / STATS.length
+                const cardWidth = el.scrollWidth / FEATURE_TWO_CARDS.length
                 el.scrollTo({ left: cardWidth * i, behavior: "smooth" })
               }}
               className="size-2 rounded-full transition-all duration-200"
@@ -178,7 +178,7 @@ export function ImpactSection2() {
             />
           ))}
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 }
