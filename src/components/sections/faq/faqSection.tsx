@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { FAQ_ITEMS, FEATURE_THREE } from "../../../lib/constants";
-import SectionContainer from "../../layout/SectionContainer";
+import { useState } from "react"
+import { FAQ_ITEMS, FEATURE_THREE } from "../../../lib/constants"
+import SectionContainer from "../../layout/SectionContainer"
 
 // All non-display text uses Outfit @400 (loaded in index.html). Set once on the
 // <section> so every child inherits it; serif elements override inline.
-const FONT_SANS = "'Outfit', 'Inter', sans-serif";
+const FONT_SANS = "'Outfit', 'Inter', sans-serif"
 
 export function FaqSection() {
-  const [openIndex, setOpenIndex] = useState<number>(1);
+  const [openIndex, setOpenIndex] = useState<number>(1)
 
   return (
     <section
@@ -15,7 +15,6 @@ export function FaqSection() {
       style={{ fontFamily: FONT_SANS }}
     >
       <SectionContainer>
-
         {/* Header Section */}
         <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between md:gap-8">
           <div className="max-w-[560px]">
@@ -30,7 +29,7 @@ export function FaqSection() {
         {/* Accordion Container */}
         <div className="flex flex-col rounded-md overflow-hidden shadow-sm border border-gray-100">
           {FAQ_ITEMS.map((item, i) => {
-            const isOpen = i === openIndex;
+            const isOpen = i === openIndex
             return (
               <div
                 key={item.id}
@@ -43,16 +42,18 @@ export function FaqSection() {
                   onClick={() => setOpenIndex(isOpen ? -1 : i)}
                   aria-expanded={isOpen}
                   className={`flex w-full items-center justify-between px-6 py-4 md:px-8 md:py-5 text-left text-[16px] md:text-[18px] leading-[25px] transition-colors duration-300 ${
-                    isOpen ? "text-[#F5F3F4]" : "text-black"
+                    isOpen ? "text-[#F5F3F4]/70" : "text-black"
                   }`}
                 >
                   {item.question}
                 </button>
-                
+
                 {/* Smooth expansion animation using CSS Grid */}
                 <div
                   className={`grid transition-all duration-300 ease-in-out ${
-                    isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                    isOpen
+                      ? "grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0"
                   }`}
                 >
                   <div className="overflow-hidden">
@@ -62,12 +63,12 @@ export function FaqSection() {
                   </div>
                 </div>
               </div>
-            );
+            )
           })}
         </div>
       </SectionContainer>
     </section>
-  );
+  )
 }
 
-export default FaqSection;
+export default FaqSection
