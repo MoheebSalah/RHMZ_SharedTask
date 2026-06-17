@@ -10,21 +10,21 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 z-50 w-full max-w-[100vw] overflow-x-clip bg-white-2">
-      <div className="mx-auto flex h-[var(--navbar-height)] w-full min-w-0 max-w-[var(--navbar-max-width)] items-center justify-between gap-2 px-[var(--spacing-container-x-sm)] py-[var(--navbar-padding-y)] md:gap-4 md:px-[var(--spacing-container-x)] xl:px-[var(--navbar-padding-x)]">
+      <div className=" relative mx-auto flex h-[var(--navbar-height)] w-full min-w-0 max-w-[var(--navbar-max-width)] items-center justify-between gap-2 px-[var(--spacing-container-x-sm)] py-[var(--navbar-padding-y)] md:gap-4 md:px-[var(--spacing-container-x)] xl:px-[var(--navbar-padding-x)]">
         <div className="min-w-0 flex-1">
           <Logo />
         </div>
 
         <nav
           aria-label="Main navigation"
-          className="hidden lg:flex lg:h-[var(--navbar-nav-height)] lg:items-center"
+          className="absolute left-1/2 hidden -translate-x-1/2 lg:flex lg:h-[var(--navbar-nav-height)] lg:items-center"
         >
           <ul className="flex items-center gap-[var(--navbar-nav-gap)]">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-body-1 leading-[var(--text-body-1--line-height)] text-text transition-colors hover:text-obsidian"
+                  className="text-1 leading-[var(--text-body-1--line-height)] text-text transition-colors hover:text-obsidian"
                 >
                   {link.label}
                 </a>
@@ -78,7 +78,7 @@ export default function Navbar() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="block text-body-2 text-text"
+                  className="block text-body-2 outfit-bold text-text"
                   onClick={closeMenu}
                 >
                   {link.label}
