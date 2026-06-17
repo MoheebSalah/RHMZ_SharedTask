@@ -68,12 +68,37 @@
   }
 
   .text-hero-title {
-    font-family: var(--font-display);
-    font-size: clamp(32px, 7.5vw, 48px);
-    line-height: 1.1;
+    font-family: var(--font-serif);
+    font-size: clamp(20px, 4.5vw, 36px);
+    line-height: 1.15;
     font-weight: 400;
-    letter-spacing: 0;
+    letter-spacing: -0.01em;
     color: var(--color-title);
+  }
+
+  .text-section-eyebrow {
+    font-family: var(--font-outfit);
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 300;
+    color: black;
+  }
+
+  .text-section-title {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: 26px;
+    line-height: 34px;
+    font-weight: 400;
+    color: var(--color-text);
+    
+  }
+
+  @media (min-width: 768px) {
+    .text-section-title {
+      font-size: 40px;
+      line-height: 46px;
+    }
   }
 
   @media (min-width: 1024px) {

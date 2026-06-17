@@ -1,3 +1,11 @@
+/**
+ * Single source of truth for landing-page copy, links, and image references.
+ * Edit section text or data here — components import these exports directly.
+ */
+import feature1 from "../assets/images/feature-1.png"
+import feature2 from "../assets/images/feature-2.png"
+import feature3 from "../assets/images/feature-3.png"
+import feature4 from "../assets/images/feature-4.jpg"
 import personCenter from "../assets/testimonials/person-center.png"
 import personLeft from "../assets/testimonials/person-left.png"
 import personRight from "../assets/testimonials/person-right.png"
@@ -46,19 +54,19 @@ export const FEATURE_ONE = {
 /** Grid order matches Figma frame: left tall → top middle → top right → bottom wide */
 export const FEATURE_ONE_IMAGES = [
   {
-    src: "/features/feature-4.png",
+    src: feature4,
     alt: "Team members reviewing analytics on a tablet",
   },
   {
-    src: "/features/feature-2.png",
+    src: feature2,
     alt: "Professional working on a laptop in a modern chair",
   },
   {
-    src: "/features/feature-1.png",
+    src: feature1,
     alt: "Colleagues collaborating at a height-adjustable desk",
   },
   {
-    src: "/features/feature-3.png",
+    src: feature3,
     alt: "Team members working together on a lounge sofa",
   },
 ] as const
@@ -75,6 +83,7 @@ export const FEATURE_TWO_CARDS = [
     icon: "/icons/impact/hand-click.png",
     iconAlt: "Retention icon",
     stat: "95%",
+    statImg: "/icons/impact/num-95.png",
     label: "Retention",
     description: "Clients continue working with us year after year.",
     height: "var(--impact-card-short-height)",
@@ -84,6 +93,7 @@ export const FEATURE_TWO_CARDS = [
     icon: "/icons/impact/shield-dollar.png",
     iconAlt: "Revenue icon",
     stat: "12M+",
+    statImg: "/icons/impact/num-12m.png",
     label: "Revenue",
     description: "Generated through strategies implemented.",
     height: "var(--impact-card-mid-height)",
@@ -93,6 +103,7 @@ export const FEATURE_TWO_CARDS = [
     icon: "/icons/impact/lightbulb-dollar.png",
     iconAlt: "Businesses icon",
     stat: "250+",
+    statImg: "/icons/impact/num-250.png",
     label: "Businesses",
     description: "Successfully supported across various industries.",
     height: "var(--impact-card-tall-height)",

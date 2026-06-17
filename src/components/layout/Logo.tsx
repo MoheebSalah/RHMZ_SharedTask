@@ -21,5 +21,5 @@ export default function Logo({ invert }: LogoProps) {
         BussinesFlex
       </span>
     </a>
-  )
+  );
 }
