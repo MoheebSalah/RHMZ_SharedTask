@@ -40,9 +40,8 @@ export function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number>(1)
 
   return (
-    // We add a min-height so that opening an item doesn't cause the entire page to jump (fixed section height).
     <section
-      className="py-10 sm:py-12 bg-white w-full min-h-[520px] flex flex-col justify-center"
+      className="w-full bg-white py-10 sm:py-12"
       style={{ fontFamily: FONT_SANS }}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -63,6 +62,9 @@ export function FaqSection() {
             Everything you need to know before working with<br></br> our
             consulting team.
           </div>
+          <p className="max-w-[340px] text-body-2 text-subtext md:pb-1">
+            {FEATURE_THREE.description}
+          </p>
         </div>
 
         {/* Accordion Container */}
@@ -71,7 +73,7 @@ export function FaqSection() {
             const isOpen = i === openIndex
             return (
               <div
-                key={item.q}
+                key={item.id}
                 className={`transition-colors duration-300 ease-in-out ${
                   isOpen ? "bg-[#e23b3b]" : "bg-[#f8f9fa] hover:bg-gray-100"
                 }`}
@@ -84,7 +86,7 @@ export function FaqSection() {
                     isOpen ? "text-[#F5F3F4]/70" : "text-black"
                   }`}
                 >
-                  {item.q}
+                  {item.question}
                 </button>
 
                 {/* Smooth expansion animation using CSS Grid */}
@@ -97,7 +99,7 @@ export function FaqSection() {
                 >
                   <div className="overflow-hidden">
                     <div className="px-6 pb-5 md:px-8 md:pb-6 text-[16px] leading-[23px] text-[#F5F3F4]">
-                      {item.a}
+                      {item.answer}
                     </div>
                   </div>
                 </div>
@@ -105,7 +107,7 @@ export function FaqSection() {
             )
           })}
         </div>
-      </div>
+      </SectionContainer>
     </section>
   )
 }

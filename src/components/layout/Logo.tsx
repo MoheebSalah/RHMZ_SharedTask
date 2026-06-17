@@ -13,9 +13,9 @@ export default function Logo() {
         className="h-[var(--navbar-logo-height)] w-auto shrink-0"
         aria-hidden="true"
       />
-      <span className="whitespace-nowrap text-body-1 font-bold leading-[var(--text-body-1--line-height)] text-text">
+      <span className="whitespace-nowrap text-body-1 outfit-bold leading-[var(--text-body-1--line-height)] text-text">
         BussinesFlex
       </span>
     </a>
-  )
+  );
 }

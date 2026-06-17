@@ -1,5 +1,5 @@
 import Button from "../../ui/Button";
-import Container from "../../layout/Container";
+import SectionContainer from "../../layout/SectionContainer";
 import { ASSETS } from "../../../lib/assets";
 
 const HERO_EYEBROW = "Trusted by Growing Businesses";
@@ -14,7 +14,7 @@ export default function HeroSection() {
       aria-labelledby="hero-heading"
       className="w-full overflow-x-clip py-[var(--hero-section-padding-y-sm)] lg:py-[var(--hero-section-padding-y)]"
     >
-      <Container>
+      <SectionContainer>
         <div className="mx-auto flex w-full min-w-0 max-w-[var(--hero-title-max-width)] flex-col items-center gap-[var(--hero-title-gap)] text-center">
           <p className="text-body-3 text-subtext">{HERO_EYEBROW}</p>
 
@@ -45,7 +45,7 @@ export default function HeroSection() {
           decoding="async"
           className="mx-auto mt-[var(--spacing-stack-3xl)] aspect-[1328/460] w-full max-w-[var(--hero-image-width)] rounded-[var(--hero-image-radius)] object-cover"
         />
-      </Container>
+      </SectionContainer>
     </section>
   );
 }

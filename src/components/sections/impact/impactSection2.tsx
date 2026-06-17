@@ -3,11 +3,11 @@ import { useEffect, useRef, useState } from "react"
 // Display serif — "Default Lingo" with web-safe fallbacks (DM Serif Display is
 // loaded in index.html). Used only for the "title" style (big numbers + the
 // section heading), per the design's typography spec.
-const FONT_SERIF = "'Default Lingo', 'DM Serif Display', Georgia, serif"
+const FONT_SERIF = "'Default Lingo', 'DM Serif Display', Georgia, serif";
 
 // All non-display text uses Outfit @400 (loaded in index.html). Set once on the
 // <section> so every child inherits it; serif elements override inline.
-const FONT_SANS = "'Outfit', 'Inter', sans-serif"
+const FONT_SANS = "'Outfit', 'Inter', sans-serif";
 
 const STATS = [
   {
@@ -59,33 +59,19 @@ export function ImpactSection2() {
 
   return (
     <section
-      className="py-12 bg-white overflow-hidden md:min-h-screen md:flex md:flex-col md:justify-center"
+      className="w-full overflow-hidden bg-white py-10 sm:py-12 lg:py-14"
       style={{ fontFamily: FONT_SANS }}
     >
-      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionContainer>
         {/* Heading row */}
-        <div className="grid items-start gap-8 md:grid-cols-3 mb-10">
-          <div className="md:col-span-2 md:pr-16">
-            <span className="text-[14px] leading-[21px] text-black block mb-4">
-              Our Impact
-            </span>
-            <h2
-              className="mt-2 text-[36px] md:text-[42px] leading-[1.05] text-black"
-              style={{ fontFamily: FONT_SERIF }}
-            >
-              Helping Businesses Achieve <br className="hidden md:block" />{" "}
-              Measurable Results
-            </h2>
+        <div className="mb-10 flex flex-col gap-3 md:flex-row md:items-end md:justify-between md:gap-8">
+          <div className="max-w-[560px]">
+            <p className="text-section-eyebrow mb-3">{FEATURE_TWO.eyebrow}</p>
+            <h2 className="text-section-title">{FEATURE_TWO.title}</h2>
           </div>
-          <div className="md:col-span-1 flex items-start md:pt-12">
-            <p className="text-[14px] leading-[21px] text-black/70">
-              Our consulting solutions have helped companies
-              <br />
-              improve performance, increase efficiency, and
-              <br />
-              accelerate growth.
-            </p>
-          </div>
+          <p className="max-w-[340px] text-body-2 text-subtext md:pb-1">
+            {FEATURE_TWO.description}
+          </p>
         </div>
 
         {/* 
@@ -114,7 +100,7 @@ export function ImpactSection2() {
 
             return (
               <div
-                key={stat.label}
+                key={card.label}
                 className={`group relative flex flex-col justify-between p-8 shrink-0 snap-center text-white
                   [container-type:inline-size]
                   w-[100vw] md:w-full md:flex-1
@@ -124,7 +110,7 @@ export function ImpactSection2() {
                   hover:-translate-y-1 hover:scale-[1.01] hover:z-10 hover:shadow-lg hover:shadow-black/10
                 `}
                 style={{
-                  backgroundColor: stat.bg,
+                  backgroundColor: card.background,
                 }}
               >
                 {/* Icon top-left */}
@@ -155,18 +141,18 @@ export function ImpactSection2() {
                       className="text-[18px] leading-[25px]"
                       style={{ color: "#F5F3F4" }}
                     >
-                      {stat.label}
+                      {card.label}
                     </p>
                     <p
                       className="md:max-w-[170px] md:text-left text-[14px] leading-[21px] opacity-90"
                       style={{ color: "#F5F3F4" }}
                     >
-                      {stat.description}
+                      {card.description}
                     </p>
                   </div>
                 </div>
               </div>
-            )
+            );
           })}
         </div>
 
@@ -194,7 +180,7 @@ export function ImpactSection2() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default ImpactSection2
+export default ImpactSection2;
