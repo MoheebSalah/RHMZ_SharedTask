@@ -4,7 +4,7 @@
  */
 :root {
   /* Font families (loaded in index.html) */
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-sans: "Outfit", system-ui, -apple-system, sans-serif;
   --font-serif: "Default Lingo", "DM Serif Display", Georgia, serif;
   --font-display: "Outfit", "Inter", sans-serif;
   --font-outfit: "Outfit", ui-sans-serif, system-ui, sans-serif;

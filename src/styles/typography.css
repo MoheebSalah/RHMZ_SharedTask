@@ -52,19 +52,19 @@
   .text-btn-1 {
     font-size: var(--text-btn-1);
     line-height: var(--text-btn-1--line-height);
-    font-weight: 700;
+    font-weight: 400;
   }
 
   .text-btn-2 {
     font-size: var(--text-btn-2);
     line-height: var(--text-btn-2--line-height);
-    font-weight: 700;
+    font-weight: 400;
   }
 
   .text-btn-3 {
     font-size: var(--text-btn-3);
     line-height: var(--text-btn-3--line-height);
-    font-weight: 700;
+    font-weight: 400;
   }
 
   .text-hero-title {
@@ -91,7 +91,6 @@
     line-height: 34px;
     font-weight: 400;
     color: var(--color-text);
-    
   }
 
   @media (min-width: 768px) {
