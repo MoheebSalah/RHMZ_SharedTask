@@ -1,3 +1,5 @@
+import { ASSETS } from "../../lib/assets";
+
 export default function Logo() {
   return (
     <a
@@ -6,7 +8,7 @@ export default function Logo() {
       aria-label="BussinesFlex home"
     >
       <img
-        src="/logo.png"
+        src={ASSETS.navbar.logo}
         alt=""
         width={40}
         height={40}
