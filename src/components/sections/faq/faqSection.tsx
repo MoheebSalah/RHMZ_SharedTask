@@ -16,10 +16,21 @@ export function FaqSection() {
     >
       <SectionContainer>
         {/* Header Section */}
-        <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between md:gap-8">
-          <div className="max-w-[560px]">
-            <p className="text-section-eyebrow mb-3">{FEATURE_THREE.eyebrow}</p>
-            <h2 className="text-section-title">{FEATURE_THREE.title}</h2>
+        <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-4 mb-8">
+          <div className="max-w-2xl">
+            <h3 className="text-[14px] leading-[21px] text-black mb-3">
+              Frequently Asked Questions
+            </h3>
+            <h2
+              className="text-[32px] md:text-[40px] leading-[1.05] text-black"
+              style={{ fontFamily: FONT_SERIF }}
+            >
+              Answers to Common <br></br>Questions
+            </h2>
+          </div>
+          <div className="max-w-md text-black/70 text-[14px] leading-[21px] md:pb-1">
+            Everything you need to know before working with<br></br> our
+            consulting team.
           </div>
           <p className="max-w-[340px] text-body-2 text-subtext md:pb-1">
             {FEATURE_THREE.description}
