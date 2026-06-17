@@ -15,7 +15,7 @@ export const colors = {
   obsidian: "#15191c",
   subtext: "#666062",
   quoteSubtext: "#696366",
-} as const;
+} as const
 
 export const typography = {
   title: { fontSize: 80, lineHeight: 80, fontWeight: 400 },
@@ -29,7 +29,7 @@ export const typography = {
   btn1: { fontSize: 18, lineHeight: 25, fontWeight: 700 },
   btn2: { fontSize: 16, lineHeight: 23, fontWeight: 700 },
   btn3: { fontSize: 14, lineHeight: 21, fontWeight: 700 },
-} as const;
+} as const
 
 export const spacing = {
   sectionY: 80,
@@ -43,20 +43,20 @@ export const spacing = {
   stackXl: 32,
   stack2xl: 40,
   stack3xl: 48,
-} as const;
+} as const
 
 export const radius = {
   none: 0,
   sm: 4,
   md: 8,
   lg: 12,
-} as const;
+} as const
 
 export const shadows = {
   sm: "0 1px 2px 0 rgb(0 0 0 / 5%)",
   md: "0 4px 12px 0 rgb(0 0 0 / 8%)",
   lg: "0 8px 24px 0 rgb(0 0 0 / 10%)",
-} as const;
+} as const
 
 export const navbar = {
   height: 72,
@@ -73,13 +73,13 @@ export const navbar = {
   btnHeight: 37,
   btnPaddingY: 8,
   btnPaddingX: 16,
-} as const;
+} as const
 
 export const heroImage = {
   width: 1328,
   height: 460,
   radius: 8,
-} as const;
+} as const
 
 export const partners = {
   sectionMaxWidth: 1328,
@@ -90,7 +90,7 @@ export const partners = {
   trackHeight: 52,
   trackOpacity: 0.2,
   borderWidth: 1,
-} as const;
+} as const
 
 export const featureOne = {
   sectionMaxWidth: 1728,
@@ -103,7 +103,7 @@ export const featureOne = {
   gridWidth: 1328,
   gridHeight: 650,
   gridGap: 20,
-} as const;
+} as const
 
 export const featureTwo = {
   headerWidth: 1329,
@@ -122,7 +122,7 @@ export const featureTwo = {
     mid: "#ba181b",
     tall: "#e5383b",
   },
-} as const;
+} as const
 
 export const featureThree = {
   sectionHeight: 790,
@@ -137,7 +137,7 @@ export const featureThree = {
   rowPadding: 24,
   rowCollapsedGap: 10,
   rowExpandedGap: 32,
-} as const;
+} as const
 
 export const featureFour = {
   sectionHeight: 1391,
@@ -149,7 +149,7 @@ export const featureFour = {
   galleryRadius: 8,
   panelTransitionMs: 400,
   cardPadding: 24,
-} as const;
+} as const
 
 export const testimonials = {
   outerGap: "clamp(20px, 3vh, 32px)",
@@ -169,4 +169,4 @@ export const testimonials = {
   panelTransitionMs: 400,
   inactiveOverlay: "rgba(22, 26, 29, 0.6)",
   contentPaddingLeft: "clamp(12px, 3vw, 40px)",
-} as const;
+} as const
