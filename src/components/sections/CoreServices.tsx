@@ -21,7 +21,7 @@ const CoreServices = () => {
                             Expert Guidance Across Every Stage of Growth
                         </h1>
                         <div className="flex items-end justify-end w-1/3">
-                            <p className={` flex items-end justify-end font-outfit text-[#696366] text-[18px]`}> Our services are designed to help businesses make smarter decisions and achieve sustainable success.</p>
+                            <p className={` flex items-end justify-end font-outfit text-[${colors.subtext}] text-[${typography.body1.fontSize}px]`}>Our services are designed to help businesses make smarter decisions and achieve sustainable success.</p>
                         </div>
                     </div>
                 </div>
@@ -56,11 +56,11 @@ const CoreServices = () => {
                                             src={service.icon}
 
                                         ></img>
-                                        <div className="felx flex-col space-y-6">
-                                            <h1 className={`text-[${typography.header1.fontSize}px] font-lingo  text-[#660708]`}>
+                                        <div className="flex flex-col space-y-4">
+                                            <h1 className={`text-[${typography.header1.fontSize}px] font-lingo  `}>
                                                 {service.title}
                                             </h1>
-                                            <p className={`text-[32px] font-outfit text-[${colors.red4}] `}
+                                            <p className={`text-[${typography.header2.fontSize}px] font-[Outfit] `}
                                             >
                                                 {service.description}
                                             </p>
