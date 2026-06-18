@@ -31,7 +31,7 @@ const LEFT_COL_WIDTH = 340;
 
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = React.useState(
-    () => window.innerWidth < breakpoint
+    () => window.innerWidth < breakpoint,
   );
 
   React.useEffect(() => {
@@ -89,11 +89,7 @@ const Carousel: React.FC = () => {
         >
           {FEATURE_ONE_IMAGES.map((img, i) => (
             <div key={i} style={carouselStyles.slide}>
-              <img
-                src={img.src}
-                alt={img.alt}
-                style={carouselStyles.img}
-              />
+              <img src={img.src} alt={img.alt} style={carouselStyles.img} />
             </div>
           ))}
         </div>
@@ -183,136 +179,134 @@ const FeatureOne: React.FC = () => {
       }}
     >
       <SectionContainer>
-      <div style={styles.inner}>
-
-        {/* ── Header ── */}
-        <div
-          style={{
-            ...styles.header,
-            flexDirection: isMobile ? "column" : "row",
-            gap: isMobile ? 16 : 32,
-            alignItems: isMobile ? "center" : "flex-start",
-          }}
-        >
+        <div style={styles.inner}>
+          {/* ── Header ── */}
           <div
             style={{
-              ...styles.headerLeft,
+              ...styles.header,
+              flexDirection: isMobile ? "column" : "row",
+              gap: isMobile ? 16 : 32,
               alignItems: isMobile ? "center" : "flex-start",
-              maxWidth: isMobile ? "100%" : 560,
             }}
           >
-            <p
-              style={{
-                ...styles.eyebrow,
-                textAlign: isMobile ? "center" : "left",
-              }}
-            >
-              {FEATURE_ONE.eyebrow}
-            </p>
-            <h2
-              style={{
-                ...styles.title,
-                fontSize: isMobile ? 26 : 40,
-                lineHeight: isMobile ? "34px" : "46px",
-                textAlign: isMobile ? "center" : "left",
-              }}
-            >
-              {FEATURE_ONE.title}
-            </h2>
-          </div>
-
-          {isMobile && (
             <div
               style={{
-                width: 40,
-                height: 1,
-                backgroundColor: colors.subtext,
-                opacity: 0.3,
-                flexShrink: 0,
+                ...styles.headerLeft,
+                alignItems: isMobile ? "center" : "flex-start",
+                maxWidth: isMobile ? "100%" : 560,
               }}
-            />
-          )}
-
-          <p
-            style={{
-              ...styles.description,
-              maxWidth: isMobile ? 300 : 340,
-              alignSelf: isMobile ? "center" : "flex-end",
-              textAlign: isMobile ? "center" : "left",
-            }}
-          >
-            {FEATURE_ONE.description}
-          </p>
-        </div>
-
-        {/* ── Images: Carousel on mobile, Grid on desktop ── */}
-        {isMobile ? (
-          <Carousel />
-        ) : (
-          <div style={styles.grid}>
-            {/* Left tall */}
-            <div style={styles.leftCell}>
-              {imgErrors[0] ? (
-                <ImagePlaceholder label="Left tall" />
-              ) : (
-                <img
-                  src={FEATURE_ONE_IMAGES[0].src}
-                  alt={FEATURE_ONE_IMAGES[0].alt}
-                  style={styles.imgFill}
-                  onError={() => handleImgError(0)}
-                />
-              )}
+            >
+              <p
+                style={{
+                  ...styles.eyebrow,
+                  textAlign: isMobile ? "center" : "left",
+                }}
+              >
+                {FEATURE_ONE.eyebrow}
+              </p>
+              <h2
+                style={{
+                  ...styles.title,
+                  fontSize: isMobile ? 26 : 40,
+                  lineHeight: isMobile ? "34px" : "46px",
+                  textAlign: isMobile ? "center" : "left",
+                }}
+              >
+                {FEATURE_ONE.title}
+              </h2>
             </div>
 
-            {/* Right column */}
-            <div style={styles.rightColumn}>
-              {/* Top row */}
-              <div style={styles.topRow}>
-                <div style={styles.topCenterCell}>
-                  {imgErrors[1] ? (
-                    <ImagePlaceholder label="Top center" />
-                  ) : (
-                    <img
-                      src={FEATURE_ONE_IMAGES[1].src}
-                      alt={FEATURE_ONE_IMAGES[1].alt}
-                      style={styles.imgFill}
-                      onError={() => handleImgError(1)}
-                    />
-                  )}
-                </div>
+            {isMobile && (
+              <div
+                style={{
+                  width: 40,
+                  height: 1,
+                  backgroundColor: colors.subtext,
+                  opacity: 0.3,
+                  flexShrink: 0,
+                }}
+              />
+            )}
 
-                <div style={styles.topRightCell}>
-                  {imgErrors[2] ? (
-                    <ImagePlaceholder label="Top right" />
-                  ) : (
-                    <img
-                      src={FEATURE_ONE_IMAGES[2].src}
-                      alt={FEATURE_ONE_IMAGES[2].alt}
-                      style={styles.imgFill}
-                      onError={() => handleImgError(2)}
-                    />
-                  )}
-                </div>
-              </div>
+            <p
+              style={{
+                ...styles.description,
+                maxWidth: isMobile ? 300 : 340,
+                alignSelf: isMobile ? "center" : "flex-end",
+                textAlign: isMobile ? "center" : "left",
+              }}
+            >
+              {FEATURE_ONE.description}
+            </p>
+          </div>
 
-              {/* Bottom wide */}
-              <div style={styles.bottomWideCell}>
-                {imgErrors[3] ? (
-                  <ImagePlaceholder label="Bottom wide" />
+          {/* ── Images: Carousel on mobile, Grid on desktop ── */}
+          {isMobile ? (
+            <Carousel />
+          ) : (
+            <div style={styles.grid}>
+              {/* Left tall */}
+              <div style={styles.leftCell}>
+                {imgErrors[0] ? (
+                  <ImagePlaceholder label="Left tall" />
                 ) : (
                   <img
-                    src={FEATURE_ONE_IMAGES[3].src}
-                    alt={FEATURE_ONE_IMAGES[3].alt}
+                    src={FEATURE_ONE_IMAGES[0].src}
+                    alt={FEATURE_ONE_IMAGES[0].alt}
                     style={styles.imgFill}
-                    onError={() => handleImgError(3)}
+                    onError={() => handleImgError(0)}
                   />
                 )}
               </div>
-            </div>
-          </div>
-        )}
 
-      </div>
+              {/* Right column */}
+              <div style={styles.rightColumn}>
+                {/* Top row */}
+                <div style={styles.topRow}>
+                  <div style={styles.topCenterCell}>
+                    {imgErrors[1] ? (
+                      <ImagePlaceholder label="Top center" />
+                    ) : (
+                      <img
+                        src={FEATURE_ONE_IMAGES[1].src}
+                        alt={FEATURE_ONE_IMAGES[1].alt}
+                        style={styles.imgFill}
+                        onError={() => handleImgError(1)}
+                      />
+                    )}
+                  </div>
+
+                  <div style={styles.topRightCell}>
+                    {imgErrors[2] ? (
+                      <ImagePlaceholder label="Top right" />
+                    ) : (
+                      <img
+                        src={FEATURE_ONE_IMAGES[2].src}
+                        alt={FEATURE_ONE_IMAGES[2].alt}
+                        style={styles.imgFill}
+                        onError={() => handleImgError(2)}
+                      />
+                    )}
+                  </div>
+                </div>
+
+                {/* Bottom wide */}
+                <div style={styles.bottomWideCell}>
+                  {imgErrors[3] ? (
+                    <ImagePlaceholder label="Bottom wide" />
+                  ) : (
+                    <img
+                      src={FEATURE_ONE_IMAGES[3].src}
+                      alt={FEATURE_ONE_IMAGES[3].alt}
+                      style={styles.imgFill}
+                      onError={() => handleImgError(3)}
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
       </SectionContainer>
     </section>
   );
@@ -365,8 +359,8 @@ const styles: Record<string, React.CSSProperties> = {
     fontFamily: "'Default Lingo', Georgia, serif",
     fontWeight: 400,
     fontStyle: "normal",
-    fontSize: 40,
-    lineHeight: "46px",
+    fontSize: 48,
+    lineHeight: "52px",
     letterSpacing: 0,
     color: colors.text,
   },
@@ -375,8 +369,8 @@ const styles: Record<string, React.CSSProperties> = {
     margin: 0,
     fontFamily: "Outfit, sans-serif",
     fontWeight: 400,
-    fontSize: 16,
-    lineHeight: "23px",
+    fontSize: 18,
+    lineHeight: "25px",
     letterSpacing: 0,
     color: colors.subtext,
   },

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { FEATURE_TWO, FEATURE_TWO_CARDS } from "../../../lib/constants";
 import SectionContainer from "../../layout/SectionContainer";
-
+import SectionHeader from "../../shared/SectionHeader";
 const FONT_SANS = "'Outfit', 'Inter', sans-serif";
 
 const IMPACT_CARD_HEIGHT_CLASSES = [
@@ -30,17 +30,13 @@ export function ImpactSection2() {
       className="w-full overflow-hidden bg-white py-10 sm:py-12 lg:py-14"
       style={{ fontFamily: FONT_SANS }}
     >
-      <SectionContainer>
+      <SectionContainer className="flex flex-col gap-[var(--testimonials-outer-gap)]">
         {/* Heading row */}
-        <div className="mb-10 flex flex-col gap-3 md:flex-row md:items-end md:justify-between md:gap-8">
-          <div className="max-w-[560px]">
-            <p className="text-section-eyebrow mb-3">{FEATURE_TWO.eyebrow}</p>
-            <h2 className="text-section-title">{FEATURE_TWO.title}</h2>
-          </div>
-          <p className="max-w-[340px] text-section-description text-subtext md:pb-1">
-            {FEATURE_TWO.description}
-          </p>
-        </div>
+        <SectionHeader
+          eyebrow={FEATURE_TWO.eyebrow}
+          title={FEATURE_TWO.title}
+          description={FEATURE_TWO.description}
+        />
 
         {/*
           Cards Container:
@@ -60,8 +56,7 @@ export function ImpactSection2() {
             } else if (i === 1) {
               borderClasses += " md:rounded-none md:rounded-bl";
             } else if (i === FEATURE_TWO_CARDS.length - 1) {
-              borderClasses +=
-                " md:rounded-none md:rounded-r md:rounded-bl";
+              borderClasses += " md:rounded-none md:rounded-r md:rounded-bl";
             }
 
             return (
