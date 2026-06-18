@@ -189,16 +189,16 @@ export default function TestimonialsSection() {
               className="pointer-events-none absolute -bottom-1 -right-1 z-[2] h-[var(--testimonials-quote-height)] w-[var(--testimonials-quote-width)] rotate-180 object-contain opacity-90"
             />
 
-            <div className="relative z-0 mx-auto flex w-full max-w-[var(--testimonials-content-width)] flex-col items-start gap-32 pl-[var(--testimonials-content-padding-left)]">
+            <div className="relative z-0 mx-auto flex w-full max-w-[var(--testimonials-content-width)] flex-col items-start gap-32 ml-[250px]">
               <blockquote className="w-full text-testimonial-quote text-text transition-opacity duration-300">
                 &ldquo;{activeTestimonial.quote}&rdquo;
               </blockquote>
 
               <div className="flex w-full max-w-[var(--testimonials-attribution-width)] flex-col items-start gap-[var(--testimonials-attribution-gap)]">
-                <p className="font-outfit font-normal text-header-3 text-title">
+                <p className="font-outfit font-normal text-header-4 text-title">
                   {activeTestimonial.name}
                 </p>
-                <p className="font-outfit font-normal text-header-3 text-quote-subtext">
+                <p className="font-outfit font-normal text-header-4 text-quote-subtext">
                   {activeTestimonial.company}
                 </p>
               </div>

@@ -25,14 +25,14 @@ body {
   --color-obsidian: #15191c;
   
 
-  --text-title: 80px;
-  --text-title--line-height: 80px;
+  --text-title: 65px;
+  --text-title--line-height: 70px;
   --text-header-1: 48px;
   --text-header-1--line-height: 52px;
   --text-header-2: 32px;
   --text-header-2--line-height: 42px;
-  --text-header-3: 24px;
-  --text-header-3--line-height: 31px;
+  --text-header-3: 20px;
+  --text-header-3--line-height: 28px;
   --text-header-4: 20px;
   --text-header-4--line-height: 27px;
   --text-body-1: 16px;

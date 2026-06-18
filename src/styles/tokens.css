@@ -25,7 +25,6 @@
   --color-quote-subtext: #696366;
   --color-white-2: #f5f3f4;
   --color-gray-2: #b1a7a6;
-
   /* Feature Two — Impact card backgrounds */
   --color-impact-short: #a4161a;
   --color-impact-mid: #ba181b;
@@ -54,7 +53,7 @@
   --testimonials-description-width: min(100%, 360px);
   --testimonials-section-width: 100%;
   --testimonials-section-gap: clamp(12px, 2vh, 20px);
-  --testimonials-photos-height: 350px;
+  --testimonials-photos-height: 250px;
   --testimonials-photos-gap: 24px;
   --testimonials-photo-active-width: 880px;
   --testimonials-photo-inactive-width: 200px;
@@ -76,7 +75,7 @@
   --testimonials-panel-transition: 400ms;
   --testimonials-inactive-overlay: #161a1d;
   --testimonials-inactive-overlay-opacity: 0.6;
-  --testimonials-content-padding-left: clamp(12px, 3vw, 40px);
+  --testimonials-content-padding-left: clamp(12px, 4vw, 100px);
   --testimonials-frame-height: 400px;
 }
 
