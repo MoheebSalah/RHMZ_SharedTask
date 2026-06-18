@@ -7,6 +7,7 @@ import Footer from "../components/layout/footer/Footer";
 import Navbar from "../components/layout/Navbar";
 import FeatureOne from "../components/sections/feature-one/FeatureOneSection";
 import CoreServices from "../components/sections/core-services/CoreServices";
+import LatestInsights from "../components/sections/insights/LatestInsights";
 
 export default function LandingPage() {
   return (
@@ -19,6 +20,7 @@ export default function LandingPage() {
         <ImpactSection2 />
         <FaqSection />
         <CoreServices />
+        <LatestInsights />
         <TestimonialsSection />
 
         <Footer />
