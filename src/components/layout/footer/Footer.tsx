@@ -35,12 +35,12 @@ const SOCIALS = [
   },
 ]
 
-/** The wide outlined "footer button" — white by default, orange on hover. */
+/** The wide outlined "footer button" — white by default, Orange On Hover. */
 function StartJourneyButton() {
   return (
     <a
       href="#contact"
-      className="footer-journey-button group inline-flex h-16 w-full items-center justify-center gap-[18px] rounded-lg border border-white px-8 py-5 !text-white hover:border-red-1 hover:bg-white/5 hover:!text-red-1 hover:opacity-80"
+      className="footer-journey-button group inline-flex h-[48px] w-full cursor-pointer items-center justify-center gap-[12px] rounded-lg border border-white px-5 py-3 !text-white hover:border-white hover:bg-white hover:!text-red-1"
     >
       <span className="footer-journey-arrow-wrap relative inline-flex size-5 items-center justify-center">
         <FiArrowUpRight
@@ -48,7 +48,7 @@ function StartJourneyButton() {
           className="footer-journey-arrow size-5 stroke-[1.8]"
         />
       </span>
-      <span className="footer-journey-button-text font-outfit text-[18px] font-medium">
+      <span className="footer-journey-button-text font-outfit text-[15px] font-medium">
         Start Your Journey
       </span>
     </a>
@@ -57,7 +57,7 @@ function StartJourneyButton() {
 
 export default function Footer() {
   return (
-    <footer id="contact" className="site-footer relative mt-20 sm:mt-32">
+    <footer id="contact" className="site-footer relative mt-20 sm:mt-32 lg:mt-36">
       {/* ── Part 1 — black CTA with oversized brand mark ───────────── */}
       <div className="footer-top-cta relative overflow-hidden bg-text sm:overflow-visible">
         <SectionContainer className="relative pt-8 pb-8 sm:pt-10 sm:pb-12">
@@ -65,10 +65,10 @@ export default function Footer() {
             <span className="text-sm font-medium text-white">
               Ready to Grow?
             </span>
-            <h2 className="mt-3 font-display text-[34px] leading-tight text-white sm:text-[42px] lg:text-[46px]">
+            <h2 className="mt-3 font-serif text-[40px] font-normal leading-[46px] text-white">
               Take the Next Step <br /> Toward Business Success
             </h2>
-            <p className="mt-5 max-w-[560px] font-outfit text-[18px] font-normal leading-[26px] tracking-normal text-white sm:text-[20px] sm:leading-[27px]">
+            <p className="mt-5 max-w-[560px] font-outfit text-[17px] font-normal leading-[25px] tracking-normal text-white sm:text-[18px] sm:leading-[26px]">
               <span className="md:inline-block md:whitespace-nowrap">
                 Partner with experienced consultants who can help you
               </span>
@@ -81,16 +81,16 @@ export default function Footer() {
             </p>
             <Button
               variant="light"
-              className="mt-12 h-[56px] w-full max-w-[267px] px-[20px] gap-[20px] !bg-[#FFFFFF] !text-[#BA181B] !font-normal !rounded-[2px] hover:!bg-[#FFFFFF]/90 border-transparent sm:mt-20"
+              className="mt-12 h-[52px] w-full max-w-[245px] cursor-pointer px-[18px] gap-[16px] !bg-[#FFFFFF] !text-[#BA181B] !font-normal !rounded-[2px] hover:!bg-[#FFFFFF]/90 border-transparent sm:mt-[72px]"
             >
               Schedule a Free Consultation
             </Button>
           </div>
 
-          {/* Oversized logo mark that pokes up into the section above and down below */}
+          {/* Oversized logo mark that sits beside the footer CTA. */}
           <svg
             viewBox="0 0 34 40"
-            className="footer-brand-shape pointer-events-none absolute -bottom-12 right-[-80px] z-0 w-[260px] opacity-75 sm:-bottom-24 sm:right-4 sm:w-[480px] sm:opacity-100 lg:-bottom-32 lg:right-12 lg:w-[580px]"
+            className="footer-brand-shape pointer-events-none absolute z-0 opacity-75 sm:opacity-100"
             fill="none"
             aria-hidden="true"
           >
@@ -119,20 +119,20 @@ export default function Footer() {
               <h3 className="font-display text-[30px] leading-tight !text-white sm:text-[38px]">
                 Helping Businesses Make <br className="hidden sm:block" /> Better Decisions Every Day
               </h3>
-              <div className="mt-8 w-full">
+              <div className="mt-4 w-full">
                 <StartJourneyButton />
               </div>
             </div>
-            <div className="sm:pt-2 md:pl-8">
-              <p className="max-w-[560px] text-[18px] font-outfit font-normal leading-[26px] !text-white sm:text-[20px] sm:leading-[27px]">
+            <div className="sm:pt-2 md:pl-24">
+              <p className="max-w-[560px] text-[15px] font-outfit font-normal leading-[22px] !text-white sm:text-[16px] sm:leading-[23px]">
                 <span className="md:inline-block md:whitespace-nowrap">
                   Expert consulting services focused on growth,
                 </span>
                 <br />
                 efficiency, and long-term success.
               </p>
-              <div className="my-6 h-px w-full max-w-sm bg-white/30" />
-              <p className="text-[20px] font-outfit font-normal text-white">
+              <div className="my-3 h-px w-full max-w-sm bg-white/30" />
+              <p className="text-[16px] font-outfit font-normal text-white">
                 Your partner in business growth.
               </p>
             </div>
@@ -148,7 +148,7 @@ export default function Footer() {
                   <h4 className="text-sm font-semibold text-[#D3D3D3]">
                     {col.title}
                   </h4>
-                  <ul className="mt-5 space-y-3">
+                  <ul className="mt-3 space-y-2">
                     {col.links.map((link) => (
                       <li key={link}>
                         <a
