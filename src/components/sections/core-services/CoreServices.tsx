@@ -101,7 +101,7 @@ const CoreServices = () => {
                                     className={`absolute flex flex-col items-start justify-between
                                     p-4 md:p-6 border border-[#D3D3D3]
                                     bottom-3 left-3 right-3
-                                    md:bottom-4 md:left-16 md:right-auto md:w-[760px] md:h-[320px]
+                                    md:bottom-4 md:left-16 md:right-16 md:w-auto md:max-w-[760px] md:h-[320px]
                                     text-[#660708] bg-[#f5f3f4]
                                     transition-all duration-500 ease-out
                                     ${isActive ? "translate-y-0 opacity-100 delay-100" : "translate-y-12 md:translate-y-50 opacity-0"}
