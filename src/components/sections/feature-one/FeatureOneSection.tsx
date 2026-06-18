@@ -1,48 +1,13 @@
 import React from "react"
 import { FEATURE_ONE, FEATURE_ONE_IMAGES } from "../../../lib/constants"
 import SectionContainer from "../../layout/SectionContainer"
+import SectionHeader from "../../shared/SectionHeader"
 
-// ─── Design Tokens ───────────────────────────────────────────────────────────
-
-const colors = {
-  white: "#ffffff",
-  text: "#0B090A",
-  eyebrow: "#000000",
-  subtext: "#696366",
-} as const
-
-const featureOne = {
-  sectionGap: 24,
-  sectionPaddingY: 32,
-  headerGap: 12,
-  gridGap: 16,
-} as const
-
-// ─── Sizes ───────────────────────────────────────────────────────────────────
-
-const GRID_GAP = featureOne.gridGap
+const GRID_GAP = 16
 const IMG_HEIGHT_TALL = 430
 const IMG_HEIGHT_TOP = 207
 const IMG_HEIGHT_BOTTOM = 207
 const LEFT_COL_WIDTH = 300
-
-// ─── Breakpoint hook ─────────────────────────────────────────────────────────
-
-function useIsMobile(breakpoint = 768) {
-  const [isMobile, setIsMobile] = React.useState(
-    () => window.innerWidth < breakpoint,
-  )
-
-  React.useEffect(() => {
-    const handler = () => setIsMobile(window.innerWidth < breakpoint)
-    window.addEventListener("resize", handler)
-    return () => window.removeEventListener("resize", handler)
-  }, [breakpoint])
-
-  return isMobile
-}
-
-// ─── Mobile grid ──────────────────────────────────────────────────────────────
 
 const MobileImageGrid: React.FC<{
   imgErrors: Record<number, boolean>
@@ -119,10 +84,7 @@ const mobileGridStyles: Record<string, React.CSSProperties> = {
   },
 }
 
-// ─── Component ───────────────────────────────────────────────────────────────
-
 const FeatureOne: React.FC = () => {
-  const isMobile = useIsMobile()
   const [imgErrors, setImgErrors] = React.useState<Record<number, boolean>>({})
 
   const handleImgError = (index: number) => {
@@ -131,172 +93,78 @@ const FeatureOne: React.FC = () => {
 
   return (
     <section className="w-full bg-white">
-      <SectionContainer>
-        <div style={styles.inner}>
-          {/* ── Header ── */}
-          <div
-            style={{
-              ...styles.header,
-              flexDirection: isMobile ? "column" : "row",
-              gap: isMobile ? 16 : 32,
-              alignItems: isMobile ? "center" : "flex-start",
-            }}
-          >
-            <div
-              style={{
-                ...styles.headerLeft,
-                alignItems: isMobile ? "center" : "flex-start",
-                maxWidth: isMobile ? "100%" : 560,
-              }}
-            >
-              <p
-                style={{
-                  ...styles.eyebrow,
-                  textAlign: isMobile ? "center" : "left",
-                }}
-              >
-                {FEATURE_ONE.eyebrow}
-              </p>
-              <h2
-                style={{
-                  ...styles.title,
-                  fontSize: isMobile ? 26 : 40,
-                  lineHeight: isMobile ? "34px" : "46px",
-                  textAlign: isMobile ? "center" : "left",
-                }}
-              >
-                {FEATURE_ONE.title}
-              </h2>
-            </div>
+      <SectionContainer className="flex flex-col gap-[var(--testimonials-outer-gap)]">
+        <SectionHeader
+          eyebrow={FEATURE_ONE.eyebrow}
+          title={FEATURE_ONE.title}
+          description={FEATURE_ONE.description}
+        />
 
-            {isMobile && (
-              <div
-                style={{
-                  width: 40,
-                  height: 1,
-                  backgroundColor: colors.subtext,
-                  opacity: 0.3,
-                  flexShrink: 0,
-                }}
-              />
-            )}
-
-            <h2
-              style={{
-                ...styles.description,
-                maxWidth: isMobile ? 300 : 340,
-                alignSelf: isMobile ? "center" : "flex-end",
-                textAlign: isMobile ? "center" : "left",
-              }}
-            ></h2>
-          </div>
-
-          {isMobile && (
-            <div
-              style={{
-                width: 40,
-                height: 1,
-                backgroundColor: colors.subtext,
-                opacity: 0.3,
-                flexShrink: 0,
-              }}
-            />
-          )}
-
-          <p
-            style={{
-              ...styles.description,
-              maxWidth: isMobile ? "100%" : 420,
-              alignSelf: isMobile ? "center" : "flex-end",
-              fontSize: isMobile ? 13 : 16,
-              lineHeight: isMobile ? "20px" : "23px",
-              textAlign: isMobile ? "center" : "left",
-            }}
-          >
-            <span style={styles.descriptionLine}>
-              From strategic planning to operational optimization,
-            </span>
-            <span style={styles.descriptionLine}>
-              we provide the expertise and guidance needed to
-            </span>
-            <span style={styles.descriptionLine}>
-              help your business grow with confidence.
-            </span>
-          </p>
+        <div className="md:hidden">
+          <MobileImageGrid imgErrors={imgErrors} onImgError={handleImgError} />
         </div>
 
-        {/* ── Images: Mobile grid, desktop feature grid ── */}
-        {isMobile ? (
-          <MobileImageGrid imgErrors={imgErrors} onImgError={handleImgError} />
-        ) : (
-          <div style={styles.grid}>
-            {/* Left tall */}
-            <div style={styles.leftCell}>
-              {imgErrors[0] ? (
-                <ImagePlaceholder label="Left tall" />
-              ) : (
-                <img
-                  src={FEATURE_ONE_IMAGES[0].src}
-                  alt={FEATURE_ONE_IMAGES[0].alt}
-                  style={styles.imgFill}
-                  onError={() => handleImgError(0)}
-                />
-              )}
-            </div>
+        <div className="hidden md:flex" style={styles.grid}>
+          <div style={styles.leftCell}>
+            {imgErrors[0] ? (
+              <ImagePlaceholder label="Left tall" />
+            ) : (
+              <img
+                src={FEATURE_ONE_IMAGES[0].src}
+                alt={FEATURE_ONE_IMAGES[0].alt}
+                style={styles.imgFill}
+                onError={() => handleImgError(0)}
+              />
+            )}
+          </div>
 
-            {/* Right column */}
-            <div style={styles.rightColumn}>
-              {/* Top row */}
-              <div style={styles.topRow}>
-                <div style={styles.topCenterCell}>
-                  {imgErrors[1] ? (
-                    <ImagePlaceholder label="Top center" />
-                  ) : (
-                    <img
-                      src={FEATURE_ONE_IMAGES[1].src}
-                      alt={FEATURE_ONE_IMAGES[1].alt}
-                      style={styles.imgFill}
-                      onError={() => handleImgError(1)}
-                    />
-                  )}
-                </div>
-
-                <div style={styles.topRightCell}>
-                  {imgErrors[2] ? (
-                    <ImagePlaceholder label="Top right" />
-                  ) : (
-                    <img
-                      src={FEATURE_ONE_IMAGES[2].src}
-                      alt={FEATURE_ONE_IMAGES[2].alt}
-                      style={styles.imgFill}
-                      onError={() => handleImgError(2)}
-                    />
-                  )}
-                </div>
-              </div>
-
-              {/* Bottom wide */}
-              <div style={styles.bottomWideCell}>
-                {imgErrors[3] ? (
-                  <ImagePlaceholder label="Bottom wide" />
+          <div style={styles.rightColumn}>
+            <div style={styles.topRow}>
+              <div style={styles.topCenterCell}>
+                {imgErrors[1] ? (
+                  <ImagePlaceholder label="Top center" />
                 ) : (
                   <img
-                    src={FEATURE_ONE_IMAGES[3].src}
-                    alt={FEATURE_ONE_IMAGES[3].alt}
+                    src={FEATURE_ONE_IMAGES[1].src}
+                    alt={FEATURE_ONE_IMAGES[1].alt}
                     style={styles.imgFill}
-                    onError={() => handleImgError(3)}
+                    onError={() => handleImgError(1)}
+                  />
+                )}
+              </div>
+
+              <div style={styles.topRightCell}>
+                {imgErrors[2] ? (
+                  <ImagePlaceholder label="Top right" />
+                ) : (
+                  <img
+                    src={FEATURE_ONE_IMAGES[2].src}
+                    alt={FEATURE_ONE_IMAGES[2].alt}
+                    style={styles.imgFill}
+                    onError={() => handleImgError(2)}
                   />
                 )}
               </div>
             </div>
+
+            <div style={styles.bottomWideCell}>
+              {imgErrors[3] ? (
+                <ImagePlaceholder label="Bottom wide" />
+              ) : (
+                <img
+                  src={FEATURE_ONE_IMAGES[3].src}
+                  alt={FEATURE_ONE_IMAGES[3].alt}
+                  style={styles.imgFill}
+                  onError={() => handleImgError(3)}
+                />
+              )}
+            </div>
           </div>
-        )}
+        </div>
       </SectionContainer>
     </section>
   )
 }
-
-// ─── Placeholder ─────────────────────────────────────────────────────────────
 
 const ImagePlaceholder: React.FC<{ label: string }> = ({ label }) => (
   <div style={styles.placeholder}>
@@ -304,73 +172,8 @@ const ImagePlaceholder: React.FC<{ label: string }> = ({ label }) => (
   </div>
 )
 
-// ─── Styles ──────────────────────────────────────────────────────────────────
-
 const styles: Record<string, React.CSSProperties> = {
-  inner: {
-    width: "100%",
-    display: "flex",
-    flexDirection: "column",
-    gap: featureOne.sectionGap,
-  },
-
-  header: {
-    display: "flex",
-    alignItems: "flex-start",
-    justifyContent: "space-between",
-    width: "100%",
-  },
-
-  headerLeft: {
-    display: "flex",
-    flexDirection: "column",
-    gap: featureOne.headerGap,
-    maxWidth: 560,
-  },
-
-  eyebrow: {
-    margin: 0,
-    fontFamily: "Outfit, sans-serif",
-    fontWeight: 400,
-    fontSize: 14,
-    lineHeight: "21px",
-    color: colors.eyebrow,
-    letterSpacing: 0,
-  },
-
-  title: {
-    margin: 0,
-    fontFamily: "'Default Lingo', Georgia, serif",
-    fontWeight: 400,
-    fontStyle: "normal",
-    fontSize: 48,
-    lineHeight: "52px",
-    letterSpacing: 0,
-    color: colors.text,
-  },
-
-  titleLine: {
-    display: "block",
-  },
-
-  description: {
-    margin: 0,
-    fontFamily: "Outfit, sans-serif",
-    fontWeight: 400,
-    fontSize: 18,
-    lineHeight: "25px",
-    letterSpacing: 0,
-    color: colors.subtext,
-  },
-
-  descriptionLine: {
-    display: "block",
-    whiteSpace: "nowrap",
-  },
-
-  // ── Desktop grid ──
   grid: {
-    display: "flex",
     flexDirection: "row",
     gap: GRID_GAP,
     width: "100%",
@@ -444,7 +247,7 @@ const styles: Record<string, React.CSSProperties> = {
   placeholderText: {
     fontFamily: "Outfit, sans-serif",
     fontSize: 13,
-    color: colors.subtext,
+    color: "#696366",
   },
 }
 
