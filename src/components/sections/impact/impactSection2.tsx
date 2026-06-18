@@ -1,29 +1,29 @@
-import { useEffect, useRef, useState } from "react"
-import { FEATURE_TWO, FEATURE_TWO_CARDS } from "../../../lib/constants"
-import SectionContainer from "../../layout/SectionContainer"
+import { useEffect, useRef, useState } from "react";
+import { FEATURE_TWO, FEATURE_TWO_CARDS } from "../../../lib/constants";
+import SectionContainer from "../../layout/SectionContainer";
 
-const FONT_SANS = "'Outfit', 'Inter', sans-serif"
+const FONT_SANS = "'Outfit', 'Inter', sans-serif";
 
 const IMPACT_CARD_HEIGHT_CLASSES = [
   "md:min-h-[clamp(360px,50vh,520px)]",
   "md:min-h-[clamp(420px,58vh,600px)]",
   "md:min-h-[clamp(480px,66vh,680px)]",
-] as const
+] as const;
 
 export function ImpactSection2() {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const scrollRef = useRef<HTMLDivElement>(null)
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const el = scrollRef.current
-    if (!el) return
+    const el = scrollRef.current;
+    if (!el) return;
     const handleScroll = () => {
-      const cardWidth = el.scrollWidth / FEATURE_TWO_CARDS.length
-      setActiveIndex(Math.round(el.scrollLeft / cardWidth))
-    }
-    el.addEventListener("scroll", handleScroll, { passive: true })
-    return () => el.removeEventListener("scroll", handleScroll)
-  }, [])
+      const cardWidth = el.scrollWidth / FEATURE_TWO_CARDS.length;
+      setActiveIndex(Math.round(el.scrollLeft / cardWidth));
+    };
+    el.addEventListener("scroll", handleScroll, { passive: true });
+    return () => el.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <section
@@ -52,27 +52,26 @@ export function ImpactSection2() {
           className="flex flex-row items-stretch md:items-start gap-0 overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           {FEATURE_TWO_CARDS.map((card, i) => {
-            const heightClass = IMPACT_CARD_HEIGHT_CLASSES[i]
+            const heightClass = IMPACT_CARD_HEIGHT_CLASSES[i];
 
-            let borderClasses = "rounded-md"
+            let borderClasses = "rounded";
             if (i === 0) {
-              borderClasses += " md:rounded-none md:rounded-l-md"
+              borderClasses += " md:rounded-none md:rounded-l";
             } else if (i === 1) {
-              borderClasses += " md:rounded-none md:rounded-bl-md"
+              borderClasses += " md:rounded-none md:rounded-bl";
             } else if (i === FEATURE_TWO_CARDS.length - 1) {
-              borderClasses += " md:rounded-none md:rounded-r-md md:rounded-bl-md"
+              borderClasses +=
+                " md:rounded-none md:rounded-r md:rounded-bl";
             }
 
             return (
               <div
                 key={card.label}
-                className={`group relative flex flex-col justify-between p-8 shrink-0 snap-center text-white
+                className={`group relative flex flex-col justify-between p-5 md:p-8 shrink-0 snap-center text-white
                   [container-type:inline-size]
-                  w-[100vw] md:w-full md:flex-1
-                  min-h-[350px] ${heightClass}
+                  w-[calc(100vw-40px)] md:w-full md:flex-1
+                  min-h-[300px] sm:min-h-[350px] ${heightClass}
                   ${borderClasses}
-                  transition-all duration-300 ease-out
-                  hover:-translate-y-1 hover:scale-[1.01] hover:z-10 hover:shadow-lg hover:shadow-black/10
                 `}
                 style={{ backgroundColor: card.background }}
               >
@@ -94,7 +93,10 @@ export function ImpactSection2() {
                     className="w-[90cqw] h-auto object-contain object-left"
                   />
                   <div className="flex flex-col md:flex-row md:items-start justify-between gap-2 md:gap-4">
-                    <p className="text-[18px] leading-[25px]" style={{ color: "#F5F3F4" }}>
+                    <p
+                      className="text-[18px] leading-[25px]"
+                      style={{ color: "#F5F3F4" }}
+                    >
                       {card.label}
                     </p>
                     <p
@@ -106,7 +108,7 @@ export function ImpactSection2() {
                   </div>
                 </div>
               </div>
-            )
+            );
           })}
         </div>
 
@@ -117,10 +119,10 @@ export function ImpactSection2() {
               key={i}
               aria-label={`Go to card ${i + 1}`}
               onClick={() => {
-                const el = scrollRef.current
-                if (!el) return
-                const cardWidth = el.scrollWidth / FEATURE_TWO_CARDS.length
-                el.scrollTo({ left: cardWidth * i, behavior: "smooth" })
+                const el = scrollRef.current;
+                if (!el) return;
+                const cardWidth = el.scrollWidth / FEATURE_TWO_CARDS.length;
+                el.scrollTo({ left: cardWidth * i, behavior: "smooth" });
               }}
               className="size-2 rounded-full transition-all duration-200"
               style={{
@@ -132,7 +134,7 @@ export function ImpactSection2() {
         </div>
       </SectionContainer>
     </section>
-  )
+  );
 }
 
-export default ImpactSection2
+export default ImpactSection2;

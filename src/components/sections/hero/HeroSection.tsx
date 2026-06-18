@@ -1,20 +1,20 @@
-import Button from "../../ui/Button";
-import SectionContainer from "../../layout/SectionContainer";
-import { ASSETS } from "../../../lib/assets";
+import Button from "../../ui/Button"
+import SectionContainer from "../../layout/SectionContainer"
+import { ASSETS } from "../../../lib/assets"
 
-const HERO_EYEBROW = "Trusted by Growing Businesses";
-const HERO_TITLE = "Strategic Business Consulting That Drives Real Growth";
+const HERO_EYEBROW = "Trusted by Growing Businesses"
+const HERO_TITLE = "Strategic Business Consulting That Drives Real Growth"
 const HERO_DESCRIPTION =
-  "We help startups, small businesses, and established companies overcome challenges, improve operations, and unlock new opportunities through expert consulting and data-driven strategies.";
+  "We help startups, small businesses, and established companies overcome challenges, improve operations, and unlock new opportunities through expert consulting and data-driven strategies."
 
 export default function HeroSection() {
   return (
     <section
       id="home"
       aria-labelledby="hero-heading"
-      className="w-full overflow-x-clip py-[var(--hero-section-padding-y-sm)] lg:py-[var(--hero-section-padding-y)]"
+      className="w-full overflow-x-clip  min-h-[calc(100vh-var(--navbar-height))] py-[var(--hero-section-padding-y-sm)] lg:py-[var(--hero-section-padding-y)]"
     >
-      <SectionContainer>
+      <SectionContainer className="flex h-full flex-col justify-center">
         <div className="mx-auto flex w-full min-w-0 max-w-[var(--hero-title-max-width)] flex-col items-center gap-[var(--hero-title-gap)] text-center">
           <p className="text-body-3 text-subtext">{HERO_EYEBROW}</p>
 
@@ -47,5 +47,5 @@ export default function HeroSection() {
         />
       </SectionContainer>
     </section>
-  );
+  )
 }

@@ -33,9 +33,9 @@
     );
   }
 }
-
 @media (max-width: 639px) {
   :root {
     --partners-track-height: var(--partners-track-height-mobile);
   }
 }
+

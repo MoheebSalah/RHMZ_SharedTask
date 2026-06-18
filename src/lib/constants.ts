@@ -2,18 +2,36 @@
  * Single source of truth for landing-page copy, links, and image references.
  * Edit section text or data here — components import these exports directly.
  */
+import ctaUnion from "../assets/cta/union.png"
+import footerBackground from "../assets/footer/background.png"
+import impactHandClick from "../assets/icons/impact/hand-click.png"
+import impactLightbulbDollar from "../assets/icons/impact/lightbulb-dollar.png"
+import impactNum12m from "../assets/icons/impact/num-12m.png"
+import impactNum250 from "../assets/icons/impact/num-250.png"
+import impactNum95 from "../assets/icons/impact/num-95.png"
+import impactShieldDollar from "../assets/icons/impact/shield-dollar.png"
 import feature1 from "../assets/images/feature-1.png"
 import feature2 from "../assets/images/feature-2.png"
 import feature3 from "../assets/images/feature-3.png"
 import feature4 from "../assets/images/feature-4.jpg"
-import personCenter from "../assets/testimonials/person-center.png"
-import personLeft from "../assets/testimonials/person-left.png"
-import personRight from "../assets/testimonials/person-right.png"
+import blog1 from "../assets/insights/blog-1.png"
+import blog2 from "../assets/insights/blog-2.png"
+import blog3 from "../assets/insights/blog-3.png"
 import partnerApple from "../assets/partners/apple.png"
 import partnerClay from "../assets/partners/clay.png"
 import partnerFacebook from "../assets/partners/facebook.png"
 import partnerOpenai from "../assets/partners/openai.png"
 import partnerSlack from "../assets/partners/slack.png"
+import serviceIconCenter from "../assets/services/icon-center.png"
+import serviceIconLeft from "../assets/services/icon-left.png"
+import serviceIconRight from "../assets/services/icon-right.png"
+import servicePanelCenter from "../assets/services/panel-center.png"
+import servicePanelLeft from "../assets/services/panel-left.png"
+import servicePanelRight from "../assets/services/panel-right.png"
+import personCenter from "../assets/testimonials/person-center.png"
+import personLeft from "../assets/testimonials/person-left.png"
+import personRight from "../assets/testimonials/person-right.png"
+import quoteMark from "../assets/testimonials/quote-mark.png"
 
 export interface FooterLink {
   label: string
@@ -80,30 +98,30 @@ export const FEATURE_TWO = {
 
 export const FEATURE_TWO_CARDS = [
   {
-    icon: "/icons/impact/hand-click.png",
+    icon: impactHandClick,
     iconAlt: "Retention icon",
     stat: "95%",
-    statImg: "/icons/impact/num-95.png",
+    statImg: impactNum95,
     label: "Retention",
     description: "Clients continue working with us year after year.",
     height: "var(--impact-card-short-height)",
     background: "var(--color-impact-short)",
   },
   {
-    icon: "/icons/impact/shield-dollar.png",
+    icon: impactShieldDollar,
     iconAlt: "Revenue icon",
     stat: "12M+",
-    statImg: "/icons/impact/num-12m.png",
+    statImg: impactNum12m,
     label: "Revenue",
     description: "Generated through strategies implemented.",
     height: "var(--impact-card-mid-height)",
     background: "var(--color-impact-mid)",
   },
   {
-    icon: "/icons/impact/lightbulb-dollar.png",
+    icon: impactLightbulbDollar,
     iconAlt: "Businesses icon",
     stat: "250+",
-    statImg: "/icons/impact/num-250.png",
+    statImg: impactNum250,
     label: "Businesses",
     description: "Successfully supported across various industries.",
     height: "var(--impact-card-tall-height)",
@@ -169,8 +187,8 @@ export type ServicePanelId = "left" | "center" | "right"
 export const SERVICES_PANELS = [
   {
     id: "left" as const,
-    image: "/services/panel-left.png",
-    icon: "/services/icon-left.png",
+    image: servicePanelLeft,
+    icon: serviceIconLeft,
     imageAlt: "Two hands reaching toward each other",
     title: "Operational Excellence",
     description:
@@ -178,8 +196,8 @@ export const SERVICES_PANELS = [
   },
   {
     id: "center" as const,
-    image: "/services/panel-center.png",
-    icon: "/services/icon-center.png",
+    image: servicePanelCenter,
+    icon: serviceIconCenter,
     imageAlt: "Business professional looking through a telescope",
     title: "Growth & Expansion",
     description:
@@ -187,8 +205,8 @@ export const SERVICES_PANELS = [
   },
   {
     id: "right" as const,
-    image: "/services/panel-right.png",
-    icon: "/services/icon-right.png",
+    image: servicePanelRight,
+    icon: serviceIconRight,
     imageAlt: "Bridge spanning a gap in the clouds",
     title: "Strategic Planning",
     description:
@@ -207,7 +225,7 @@ export const INSIGHTS_SECTION = {
 
 export const INSIGHTS_BLOG_POSTS = [
   {
-    image: "/insights/blog-1.png",
+    image: blog1,
     imageAlt: "Illustration of an airplane taking off from an airport runway",
     title: "5 Signs Your Business Needs a Strategic Review",
     description:
@@ -215,7 +233,7 @@ export const INSIGHTS_BLOG_POSTS = [
     href: "#",
   },
   {
-    image: "/insights/blog-2.png",
+    image: blog2,
     imageAlt:
       "Business professional looking through a telescope from a blue platform",
     title: "How Process Optimization Increases Profitability",
@@ -224,7 +242,7 @@ export const INSIGHTS_BLOG_POSTS = [
     href: "#",
   },
   {
-    image: "/insights/blog-3.png",
+    image: blog3,
     imageAlt: "Silhouette walking toward a bright doorway on a blue background",
     title: "Building a Scalable Business for Long-Term Success",
     description: "Key strategies every growing company should implement early.",
@@ -280,7 +298,7 @@ export const CTA_SECTION = {
   description:
     "Partner with experienced consultants who can help you solve challenges, seize opportunities, and achieve your goals faster.",
   buttonLabel: "Schedule a Free Consultation",
-  unionImage: "/cta/union.png",
+  unionImage: ctaUnion,
   unionImageAlt: "",
 } as const
 
@@ -290,8 +308,10 @@ export const FOOTER_HERO = {
   summary:
     "Expert consulting services focused on growth, efficiency, and long-term success.",
   tagline: "Your partner in business growth.",
-  backgroundImage: "/footer/background.png",
+  backgroundImage: footerBackground,
 } as const
+
+export const TESTIMONIAL_QUOTE_MARK = quoteMark
 
 export const FOOTER_COLUMNS: FooterColumnData[] = [
   {

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
+  TESTIMONIAL_QUOTE_MARK,
   TESTIMONIALS,
   TESTIMONIALS_SECTION,
   type TestimonialId,
@@ -175,7 +176,7 @@ export default function TestimonialsSection() {
 
           <div className="relative isolate flex w-full min-h-[var(--testimonials-frame-height)] flex-col justify-between gap-2 overflow-hidden rounded-[var(--radius-md)] bg-white-2 p-[var(--testimonials-frame-padding)]">
             <img
-              src="/testimonials/quote-mark.png"
+              src={TESTIMONIAL_QUOTE_MARK}
               alt=""
               aria-hidden="true"
               width={271}
@@ -183,7 +184,7 @@ export default function TestimonialsSection() {
               className="pointer-events-none absolute -left-3 -top-2 z-[1] h-[var(--testimonials-quote-height)] w-[var(--testimonials-quote-width)] object-contain opacity-90"
             />
             <img
-              src="/testimonials/quote-mark.png"
+              src={TESTIMONIAL_QUOTE_MARK}
               alt=""
               aria-hidden="true"
               width={271}

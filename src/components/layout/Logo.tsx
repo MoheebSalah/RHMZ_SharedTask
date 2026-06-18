@@ -17,7 +17,7 @@ export default function Logo({ invert, variant = "default" }: LogoProps) {
       aria-label="BussinesFlex home"
     >
       <img
-        src="/logo.png"
+        src={ASSETS.navbar.logo}
         alt=""
         width={isFooter ? 47.46641159057617 : 40}
         height={isFooter ? 56.001365661621094 : 40}

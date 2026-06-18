@@ -2,6 +2,20 @@
  * Shared design tokens for hero, footer, buttons, and layout.
  * Sourced from react-app/src/styles/tokens.css
  */
+
+@font-face {
+  font-family: "Default Lingo";
+  src: url("/fonts/default-lingo-demo-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+
 @theme {
   --color-gray: #d3d3d3;
   --color-red-1: #de3b36;

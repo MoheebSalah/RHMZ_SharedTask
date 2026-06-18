@@ -1,5 +1,8 @@
 import { forwardRef } from "react";
-import type { TestimonialId } from "../../../lib/constants";
+import {
+  TESTIMONIAL_QUOTE_MARK,
+  type TestimonialId,
+} from "../../../lib/constants";
 
 interface TestimonialMobileCardProps {
   id: TestimonialId;
@@ -16,16 +19,7 @@ const TestimonialMobileCard = forwardRef<
   HTMLDivElement,
   TestimonialMobileCardProps
 >(function TestimonialMobileCard(
-  {
-    id,
-    image,
-    imageAlt,
-    name,
-    company,
-    quote,
-    objectPosition,
-    onActivate,
-  },
+  { id, image, imageAlt, name, company, quote, objectPosition, onActivate },
   ref,
 ) {
   return (
@@ -62,7 +56,7 @@ const TestimonialMobileCard = forwardRef<
         </div>
 
         <img
-          src="/testimonials/quote-mark.png"
+          src={TESTIMONIAL_QUOTE_MARK}
           alt=""
           aria-hidden="true"
           width={40}
