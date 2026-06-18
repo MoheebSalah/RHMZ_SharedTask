@@ -6,26 +6,25 @@ import SectionContainer from "../../layout/SectionContainer";
 
 const colors = {
   white: "#ffffff",
-  text: "#000000",
-  subtext: "#666062",
-  dot: "#d3d3d3",
-  dotActive: "#000000",
+  text: "#0B090A",
+  eyebrow: "#000000",
+  subtext: "#696366",
 } as const;
 
 const featureOne = {
-  sectionGap: 32,
-  sectionPaddingY: 56,
-  headerGap: 16,
+  sectionGap: 24,
+  sectionPaddingY: 32,
+  headerGap: 12,
   gridGap: 16,
 } as const;
 
 // ─── Sizes ───────────────────────────────────────────────────────────────────
 
 const GRID_GAP = featureOne.gridGap;
-const IMG_HEIGHT_TALL = 520;
-const IMG_HEIGHT_TOP = 252;
-const IMG_HEIGHT_BOTTOM = 252;
-const LEFT_COL_WIDTH = 340;
+const IMG_HEIGHT_TALL = 430;
+const IMG_HEIGHT_TOP = 207;
+const IMG_HEIGHT_BOTTOM = 207;
+const LEFT_COL_WIDTH = 300;
 
 // ─── Breakpoint hook ─────────────────────────────────────────────────────────
 
@@ -43,103 +42,69 @@ function useIsMobile(breakpoint = 768) {
   return isMobile;
 }
 
-// ─── Carousel (mobile) ───────────────────────────────────────────────────────
+// ─── Mobile grid ──────────────────────────────────────────────────────────────
 
-const Carousel: React.FC = () => {
-  const [current, setCurrent] = React.useState(0);
-  const total = FEATURE_ONE_IMAGES.length;
-  const trackRef = React.useRef<HTMLDivElement>(null);
-
-  // Touch swipe
-  const touchStartX = React.useRef<number>(0);
-
-  const goTo = (index: number) => {
-    setCurrent(Math.max(0, Math.min(index, total - 1)));
-  };
-
-  const onTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const onTouchEnd = (e: React.TouchEvent) => {
-    const delta = touchStartX.current - e.changedTouches[0].clientX;
-    if (Math.abs(delta) > 40) {
-      if (delta > 0) {
-        goTo(current + 1);
-      } else {
-        goTo(current - 1);
-      }
-    }
-  };
+const MobileImageGrid: React.FC<{
+  imgErrors: Record<number, boolean>;
+  onImgError: (index: number) => void;
+}> = ({ imgErrors, onImgError }) => {
+  const cellStyles = [
+    mobileGridStyles.featuredCell,
+    mobileGridStyles.smallCell,
+    mobileGridStyles.smallCell,
+    mobileGridStyles.wideCell,
+  ];
 
   return (
-    <div style={carouselStyles.wrapper}>
-      {/* Track */}
-      <div
-        style={carouselStyles.overflow}
-        onTouchStart={onTouchStart}
-        onTouchEnd={onTouchEnd}
-      >
-        <div
-          ref={trackRef}
-          style={{
-            ...carouselStyles.track,
-            transform: `translateX(-${current * 100}%)`,
-          }}
-        >
-          {FEATURE_ONE_IMAGES.map((img, i) => (
-            <div key={i} style={carouselStyles.slide}>
-              <img
-                src={img.src}
-                alt={img.alt}
-                style={carouselStyles.img}
-              />
-            </div>
-          ))}
+    <div style={mobileGridStyles.grid}>
+      {FEATURE_ONE_IMAGES.map((img, index) => (
+        <div key={img.alt} style={cellStyles[index]}>
+          {imgErrors[index] ? (
+            <ImagePlaceholder label={img.alt} />
+          ) : (
+            <img
+              src={img.src}
+              alt={img.alt}
+              style={
+                index === 0
+                  ? mobileGridStyles.featuredImg
+                  : mobileGridStyles.img
+              }
+              onError={() => onImgError(index)}
+            />
+          )}
         </div>
-      </div>
-
-      {/* Dots */}
-      <div style={carouselStyles.dots}>
-        {FEATURE_ONE_IMAGES.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => goTo(i)}
-            style={{
-              ...carouselStyles.dot,
-              backgroundColor: i === current ? colors.dotActive : colors.dot,
-              transform: i === current ? "scale(1.2)" : "scale(1)",
-            }}
-            aria-label={`Go to slide ${i + 1}`}
-          />
-        ))}
-      </div>
+      ))}
     </div>
   );
 };
 
-const carouselStyles: Record<string, React.CSSProperties> = {
-  wrapper: {
+const mobileGridStyles: Record<string, React.CSSProperties> = {
+  grid: {
     width: "100%",
-    display: "flex",
-    flexDirection: "column",
-    gap: 16,
+    display: "grid",
+    gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+    gap: 10,
   },
-  overflow: {
-    width: "100%",
-    overflow: "hidden",
-    borderRadius: 8,
-  },
-  track: {
-    display: "flex",
-    transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-    willChange: "transform",
-  },
-  slide: {
-    flex: "0 0 100%",
-    height: 260,
+  featuredCell: {
+    gridColumn: "1 / -1",
+    height: "auto",
     borderRadius: 8,
     overflow: "hidden",
+    backgroundColor: "#ffffff",
+  },
+  smallCell: {
+    height: 118,
+    borderRadius: 8,
+    overflow: "hidden",
+    backgroundColor: "#e8e8e8",
+  },
+  wideCell: {
+    gridColumn: "1 / -1",
+    height: 146,
+    borderRadius: 8,
+    overflow: "hidden",
+    backgroundColor: "#e8e8e8",
   },
   img: {
     width: "100%",
@@ -147,20 +112,10 @@ const carouselStyles: Record<string, React.CSSProperties> = {
     objectFit: "cover",
     display: "block",
   },
-  dots: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: 8,
-  },
-  dot: {
-    width: 8,
-    height: 8,
-    borderRadius: "50%",
-    border: "none",
-    cursor: "pointer",
-    padding: 0,
-    transition: "background-color 0.2s ease, transform 0.2s ease",
+  featuredImg: {
+    width: "100%",
+    height: "auto",
+    display: "block",
   },
 };
 
@@ -217,7 +172,10 @@ const FeatureOne: React.FC = () => {
                 textAlign: isMobile ? "center" : "left",
               }}
             >
-              {FEATURE_ONE.title}
+              <span style={styles.titleLine}>
+                Everything You Need to
+              </span>
+              <span style={styles.titleLine}>Build a Stronger Business</span>
             </h2>
           </div>
 
@@ -236,18 +194,31 @@ const FeatureOne: React.FC = () => {
           <p
             style={{
               ...styles.description,
-              maxWidth: isMobile ? 300 : 340,
+              maxWidth: isMobile ? "100%" : 420,
               alignSelf: isMobile ? "center" : "flex-end",
+              fontSize: isMobile ? 13 : 16,
+              lineHeight: isMobile ? "20px" : "23px",
               textAlign: isMobile ? "center" : "left",
             }}
           >
-            {FEATURE_ONE.description}
+            <span style={styles.descriptionLine}>
+              From strategic planning to operational optimization,
+            </span>
+            <span style={styles.descriptionLine}>
+              we provide the expertise and guidance needed to
+            </span>
+            <span style={styles.descriptionLine}>
+              help your business grow with confidence.
+            </span>
           </p>
         </div>
 
-        {/* ── Images: Carousel on mobile, Grid on desktop ── */}
+        {/* ── Images: Mobile grid, desktop feature grid ── */}
         {isMobile ? (
-          <Carousel />
+          <MobileImageGrid
+            imgErrors={imgErrors}
+            onImgError={handleImgError}
+          />
         ) : (
           <div style={styles.grid}>
             {/* Left tall */}
@@ -356,7 +327,7 @@ const styles: Record<string, React.CSSProperties> = {
     fontWeight: 400,
     fontSize: 14,
     lineHeight: "21px",
-    color: colors.subtext,
+    color: colors.eyebrow,
     letterSpacing: 0,
   },
 
@@ -371,6 +342,10 @@ const styles: Record<string, React.CSSProperties> = {
     color: colors.text,
   },
 
+  titleLine: {
+    display: "block",
+  },
+
   description: {
     margin: 0,
     fontFamily: "Outfit, sans-serif",
@@ -379,6 +354,11 @@ const styles: Record<string, React.CSSProperties> = {
     lineHeight: "23px",
     letterSpacing: 0,
     color: colors.subtext,
+  },
+
+  descriptionLine: {
+    display: "block",
+    whiteSpace: "nowrap",
   },
 
   // ── Desktop grid ──

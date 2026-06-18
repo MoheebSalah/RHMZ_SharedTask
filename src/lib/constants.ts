@@ -13,7 +13,7 @@ import impactShieldDollar from "../assets/icons/impact/shield-dollar.png"
 import feature1 from "../assets/images/feature-1.png"
 import feature2 from "../assets/images/feature-2.png"
 import feature3 from "../assets/images/feature-3.png"
-import feature4 from "../assets/images/feature-4.jpg"
+import feature4Full from "../assets/images/feature-4-full.png"
 import blog1 from "../assets/insights/blog-1.png"
 import blog2 from "../assets/insights/blog-2.png"
 import blog3 from "../assets/insights/blog-3.png"
@@ -72,7 +72,7 @@ export const FEATURE_ONE = {
 /** Grid order matches Figma frame: left tall → top middle → top right → bottom wide */
 export const FEATURE_ONE_IMAGES = [
   {
-    src: feature4,
+    src: feature4Full,
     alt: "Team members reviewing analytics on a tablet",
   },
   {
