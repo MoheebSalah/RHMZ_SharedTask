@@ -12,9 +12,9 @@ export default function HeroSection() {
     <section
       id="home"
       aria-labelledby="hero-heading"
-      className="w-full overflow-x-clip py-[var(--hero-section-padding-y-sm)] lg:py-[var(--hero-section-padding-y)]"
+      className="w-full overflow-x-clip  min-h-[calc(100vh-var(--navbar-height))] py-[var(--hero-section-padding-y-sm)] lg:py-[var(--hero-section-padding-y)]"
     >
-      <SectionContainer>
+      <SectionContainer className="flex h-full flex-col justify-center">
         <div className="mx-auto flex w-full min-w-0 max-w-[var(--hero-title-max-width)] flex-col items-center gap-[var(--hero-title-gap)] text-center">
           <p className="text-body-3 text-subtext">{HERO_EYEBROW}</p>
 

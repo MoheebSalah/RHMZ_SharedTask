@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react"
-import { FEATURE_TWO, FEATURE_TWO_CARDS } from "../../../lib/constants"
+import { useEffect, useRef, useState } from "react";
+import { FEATURE_TWO, FEATURE_TWO_CARDS } from "../../../lib/constants";
 import SectionContainer from "../../layout/SectionContainer";
 
 // All non-display text uses Outfit @400 (loaded in index.html). Set once on the
@@ -13,20 +13,20 @@ const IMPACT_CARD_HEIGHT_CLASSES = [
 ] as const;
 
 export function ImpactSection2() {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const scrollRef = useRef<HTMLDivElement>(null)
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   // Track which card is centered on mobile so the dots stay in sync with swipes.
   useEffect(() => {
-    const el = scrollRef.current
-    if (!el) return
+    const el = scrollRef.current;
+    if (!el) return;
     const handleScroll = () => {
-      const cardWidth = el.scrollWidth / FEATURE_TWO_CARDS.length
-      setActiveIndex(Math.round(el.scrollLeft / cardWidth))
-    }
-    el.addEventListener("scroll", handleScroll, { passive: true })
-    return () => el.removeEventListener("scroll", handleScroll)
-  }, [])
+      const cardWidth = el.scrollWidth / FEATURE_TWO_CARDS.length;
+      setActiveIndex(Math.round(el.scrollLeft / cardWidth));
+    };
+    el.addEventListener("scroll", handleScroll, { passive: true });
+    return () => el.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <section
@@ -138,10 +138,10 @@ export function ImpactSection2() {
               key={i}
               aria-label={`Go to card ${i + 1}`}
               onClick={() => {
-                const el = scrollRef.current
-                if (!el) return
-                const cardWidth = el.scrollWidth / FEATURE_TWO_CARDS.length
-                el.scrollTo({ left: cardWidth * i, behavior: "smooth" })
+                const el = scrollRef.current;
+                if (!el) return;
+                const cardWidth = el.scrollWidth / FEATURE_TWO_CARDS.length;
+                el.scrollTo({ left: cardWidth * i, behavior: "smooth" });
               }}
               className="size-2 rounded-full transition-all duration-200"
               style={{
