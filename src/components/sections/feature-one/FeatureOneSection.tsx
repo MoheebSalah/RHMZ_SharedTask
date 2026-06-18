@@ -1,6 +1,6 @@
-import React from "react";
-import { FEATURE_ONE, FEATURE_ONE_IMAGES } from "../../../lib/constants";
-import SectionContainer from "../../layout/SectionContainer";
+import React from "react"
+import { FEATURE_ONE, FEATURE_ONE_IMAGES } from "../../../lib/constants"
+import SectionContainer from "../../layout/SectionContainer"
 
 // ─── Design Tokens ───────────────────────────────────────────────────────────
 
@@ -9,51 +9,51 @@ const colors = {
   text: "#0B090A",
   eyebrow: "#000000",
   subtext: "#696366",
-} as const;
+} as const
 
 const featureOne = {
   sectionGap: 24,
   sectionPaddingY: 32,
   headerGap: 12,
   gridGap: 16,
-} as const;
+} as const
 
 // ─── Sizes ───────────────────────────────────────────────────────────────────
 
-const GRID_GAP = featureOne.gridGap;
-const IMG_HEIGHT_TALL = 430;
-const IMG_HEIGHT_TOP = 207;
-const IMG_HEIGHT_BOTTOM = 207;
-const LEFT_COL_WIDTH = 300;
+const GRID_GAP = featureOne.gridGap
+const IMG_HEIGHT_TALL = 430
+const IMG_HEIGHT_TOP = 207
+const IMG_HEIGHT_BOTTOM = 207
+const LEFT_COL_WIDTH = 300
 
 // ─── Breakpoint hook ─────────────────────────────────────────────────────────
 
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = React.useState(
     () => window.innerWidth < breakpoint,
-  );
+  )
 
   React.useEffect(() => {
-    const handler = () => setIsMobile(window.innerWidth < breakpoint);
-    window.addEventListener("resize", handler);
-    return () => window.removeEventListener("resize", handler);
-  }, [breakpoint]);
+    const handler = () => setIsMobile(window.innerWidth < breakpoint)
+    window.addEventListener("resize", handler)
+    return () => window.removeEventListener("resize", handler)
+  }, [breakpoint])
 
-  return isMobile;
+  return isMobile
 }
 
 // ─── Mobile grid ──────────────────────────────────────────────────────────────
 
 const MobileImageGrid: React.FC<{
-  imgErrors: Record<number, boolean>;
-  onImgError: (index: number) => void;
+  imgErrors: Record<number, boolean>
+  onImgError: (index: number) => void
 }> = ({ imgErrors, onImgError }) => {
   const cellStyles = [
     mobileGridStyles.featuredCell,
     mobileGridStyles.smallCell,
     mobileGridStyles.smallCell,
     mobileGridStyles.wideCell,
-  ];
+  ]
 
   return (
     <div style={mobileGridStyles.grid}>
@@ -76,8 +76,8 @@ const MobileImageGrid: React.FC<{
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
 const mobileGridStyles: Record<string, React.CSSProperties> = {
   grid: {
@@ -117,26 +117,20 @@ const mobileGridStyles: Record<string, React.CSSProperties> = {
     height: "auto",
     display: "block",
   },
-};
+}
 
 // ─── Component ───────────────────────────────────────────────────────────────
 
 const FeatureOne: React.FC = () => {
-  const isMobile = useIsMobile();
-  const [imgErrors, setImgErrors] = React.useState<Record<number, boolean>>({});
+  const isMobile = useIsMobile()
+  const [imgErrors, setImgErrors] = React.useState<Record<number, boolean>>({})
 
   const handleImgError = (index: number) => {
-    setImgErrors((prev) => ({ ...prev, [index]: true }));
-  };
+    setImgErrors((prev) => ({ ...prev, [index]: true }))
+  }
 
   return (
-    <section
-      className="w-full bg-white"
-      style={{
-        paddingTop: isMobile ? 40 : featureOne.sectionPaddingY,
-        paddingBottom: isMobile ? 40 : featureOne.sectionPaddingY,
-      }}
-    >
+    <section className="w-full bg-white">
       <SectionContainer>
         <div style={styles.inner}>
           {/* ── Header ── */}
@@ -187,19 +181,14 @@ const FeatureOne: React.FC = () => {
               />
             )}
 
-            <p
+            <h2
               style={{
                 ...styles.description,
                 maxWidth: isMobile ? 300 : 340,
                 alignSelf: isMobile ? "center" : "flex-end",
                 textAlign: isMobile ? "center" : "left",
               }}
-            >
-              <span style={styles.titleLine}>
-                Everything You Need to
-              </span>
-              <span style={styles.titleLine}>Build a Stronger Business</span>
-            </h2>
+            ></h2>
           </div>
 
           {isMobile && (
@@ -238,10 +227,7 @@ const FeatureOne: React.FC = () => {
 
         {/* ── Images: Mobile grid, desktop feature grid ── */}
         {isMobile ? (
-          <MobileImageGrid
-            imgErrors={imgErrors}
-            onImgError={handleImgError}
-          />
+          <MobileImageGrid imgErrors={imgErrors} onImgError={handleImgError} />
         ) : (
           <div style={styles.grid}>
             {/* Left tall */}
@@ -258,58 +244,57 @@ const FeatureOne: React.FC = () => {
               )}
             </div>
 
-              {/* Right column */}
-              <div style={styles.rightColumn}>
-                {/* Top row */}
-                <div style={styles.topRow}>
-                  <div style={styles.topCenterCell}>
-                    {imgErrors[1] ? (
-                      <ImagePlaceholder label="Top center" />
-                    ) : (
-                      <img
-                        src={FEATURE_ONE_IMAGES[1].src}
-                        alt={FEATURE_ONE_IMAGES[1].alt}
-                        style={styles.imgFill}
-                        onError={() => handleImgError(1)}
-                      />
-                    )}
-                  </div>
-
-                  <div style={styles.topRightCell}>
-                    {imgErrors[2] ? (
-                      <ImagePlaceholder label="Top right" />
-                    ) : (
-                      <img
-                        src={FEATURE_ONE_IMAGES[2].src}
-                        alt={FEATURE_ONE_IMAGES[2].alt}
-                        style={styles.imgFill}
-                        onError={() => handleImgError(2)}
-                      />
-                    )}
-                  </div>
-                </div>
-
-                {/* Bottom wide */}
-                <div style={styles.bottomWideCell}>
-                  {imgErrors[3] ? (
-                    <ImagePlaceholder label="Bottom wide" />
+            {/* Right column */}
+            <div style={styles.rightColumn}>
+              {/* Top row */}
+              <div style={styles.topRow}>
+                <div style={styles.topCenterCell}>
+                  {imgErrors[1] ? (
+                    <ImagePlaceholder label="Top center" />
                   ) : (
                     <img
-                      src={FEATURE_ONE_IMAGES[3].src}
-                      alt={FEATURE_ONE_IMAGES[3].alt}
+                      src={FEATURE_ONE_IMAGES[1].src}
+                      alt={FEATURE_ONE_IMAGES[1].alt}
                       style={styles.imgFill}
-                      onError={() => handleImgError(3)}
+                      onError={() => handleImgError(1)}
+                    />
+                  )}
+                </div>
+
+                <div style={styles.topRightCell}>
+                  {imgErrors[2] ? (
+                    <ImagePlaceholder label="Top right" />
+                  ) : (
+                    <img
+                      src={FEATURE_ONE_IMAGES[2].src}
+                      alt={FEATURE_ONE_IMAGES[2].alt}
+                      style={styles.imgFill}
+                      onError={() => handleImgError(2)}
                     />
                   )}
                 </div>
               </div>
+
+              {/* Bottom wide */}
+              <div style={styles.bottomWideCell}>
+                {imgErrors[3] ? (
+                  <ImagePlaceholder label="Bottom wide" />
+                ) : (
+                  <img
+                    src={FEATURE_ONE_IMAGES[3].src}
+                    alt={FEATURE_ONE_IMAGES[3].alt}
+                    style={styles.imgFill}
+                    onError={() => handleImgError(3)}
+                  />
+                )}
+              </div>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </SectionContainer>
     </section>
-  );
-};
+  )
+}
 
 // ─── Placeholder ─────────────────────────────────────────────────────────────
 
@@ -317,7 +302,7 @@ const ImagePlaceholder: React.FC<{ label: string }> = ({ label }) => (
   <div style={styles.placeholder}>
     <span style={styles.placeholderText}>{label}</span>
   </div>
-);
+)
 
 // ─── Styles ──────────────────────────────────────────────────────────────────
 
@@ -461,6 +446,6 @@ const styles: Record<string, React.CSSProperties> = {
     fontSize: 13,
     color: colors.subtext,
   },
-};
+}
 
-export default FeatureOne;
+export default FeatureOne
