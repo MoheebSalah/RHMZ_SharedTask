@@ -110,7 +110,7 @@ export default function Footer() {
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-black/25" />
+        <div className="footer-image-overlay absolute inset-0 bg-black/25" />
 
         {/* Part 2 — sharp image, headline + CTA */}
         <SectionContainer className="relative flex flex-col gap-4 pt-10 pb-20 sm:pt-4 sm:pb-[176px]">
