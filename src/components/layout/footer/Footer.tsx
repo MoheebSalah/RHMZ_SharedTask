@@ -1,6 +1,6 @@
 import { FiArrowUpRight } from "react-icons/fi"
 import { FaXTwitter } from "react-icons/fa6"
-import Container from "../Container"
+import SectionContainer from "../SectionContainer"
 import Logo from "../Logo"
 import Button from "../../ui/Button"
 import footerImg2 from "../../../assets/images/footer.png"
@@ -60,7 +60,7 @@ export default function Footer() {
     <footer id="contact" className="site-footer relative mt-20 sm:mt-32">
       {/* ── Part 1 — black CTA with oversized brand mark ───────────── */}
       <div className="footer-top-cta relative overflow-hidden bg-text sm:overflow-visible">
-        <Container className="relative pt-8 pb-8 sm:pt-10 sm:pb-12">
+        <SectionContainer className="relative pt-8 pb-8 sm:pt-10 sm:pb-12">
           <div className="relative z-10 max-w-full sm:max-w-xl">
             <span className="text-sm font-medium text-white">
               Ready to Grow?
@@ -99,7 +99,7 @@ export default function Footer() {
               fill="#E5383B"
             />
           </svg>
-        </Container>
+        </SectionContainer>
       </div>
 
       {/* ── Parts 2 & 3 share one background image ─────────────────── */}
@@ -113,7 +113,7 @@ export default function Footer() {
         <div className="absolute inset-0 bg-black/25" />
 
         {/* Part 2 — sharp image, headline + CTA */}
-        <Container className="relative flex flex-col gap-4 pt-10 pb-20 sm:pt-4 sm:pb-[176px]">
+        <SectionContainer className="relative flex flex-col gap-4 pt-10 pb-20 sm:pt-4 sm:pb-[176px]">
           <div className="footer-cta-row grid gap-10 md:grid-cols-2 md:items-start">
             <div className="footer-journey-block w-fit max-w-full">
               <h3 className="font-display text-[30px] leading-tight !text-white sm:text-[38px]">
@@ -137,11 +137,11 @@ export default function Footer() {
               </p>
             </div>
           </div>
-        </Container>
+        </SectionContainer>
 
         {/* Part 3 — same image but blurred + greyed behind the link grid */}
         <div className="footer-links-panel relative bg-obsidian/60 backdrop-blur-lg">
-          <Container className="py-12 sm:py-14">
+          <SectionContainer className="py-12 sm:py-14">
             <div className="footer-links-grid grid grid-cols-1 gap-10 sm:grid-cols-3 sm:justify-items-center">
               {COLUMNS.map((col, i) => (
                 <div key={`${col.title}-${i}`} className="footer-link-column w-full sm:w-fit">
@@ -226,7 +226,7 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-          </Container>
+          </SectionContainer>
         </div>
       </div>
     </footer>

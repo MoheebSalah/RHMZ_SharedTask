@@ -1,11 +1,11 @@
-import FaqSection from "../components/sections/faq/faqSection";
-import ImpactSection2 from "../components/sections/impact/impactSection2";
-import HeroSection from "../components/sections/hero/HeroSection";
-import PartnersSection from "../components/sections/partners/PartnersSection";
-import TestimonialsSection from "../components/sections/testimonials/TestimonialsSection";
-import Footer from "../components/layout/footer/Footer";
-import Navbar from "../components/layout/Navbar";
-import FeatureOne from "../components/sections/feature-one/FeatureOneSection";
+import FaqSection from "../components/sections/faq/faqSection"
+import ImpactSection2 from "../components/sections/impact/impactSection2"
+import HeroSection from "../components/sections/hero/HeroSection"
+import PartnersSection from "../components/sections/partners/PartnersSection"
+import TestimonialsSection from "../components/sections/testimonials/TestimonialsSection"
+import Footer from "../components/layout/footer/Footer"
+import Navbar from "../components/layout/Navbar"
+import FeatureOne from "../components/sections/feature-one/FeatureOneSection"
 
 export default function LandingPage() {
   return (
@@ -18,9 +18,8 @@ export default function LandingPage() {
         <ImpactSection2 />
         <FaqSection />
         <TestimonialsSection />
-
         <Footer />
       </main>
     </>
-  );
+  )
 }

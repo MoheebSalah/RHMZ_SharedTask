@@ -1,3 +1,5 @@
+import { ASSETS } from "../../lib/assets";
+
 interface LogoProps {
   invert?: boolean;
   variant?: "default" | "footer";
