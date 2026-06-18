@@ -1,17 +1,6 @@
 import { PARTNER_LOGOS } from "../../../lib/constants";
 
 function PartnerLogo({ name, src }: { name: string; src: string }) {
-  if (name === "OpenAI") {
-    return (
-      <span
-        className="flex h-[var(--partners-track-height)] items-center text-[22px] font-semibold leading-none text-text sm:text-[28px]"
-        aria-hidden="true"
-      >
-        OpenAI
-      </span>
-    );
-  }
-
   return (
     <img
       src={src}

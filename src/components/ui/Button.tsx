@@ -1,6 +1,6 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 
-type ButtonVariant = "outline" | "solid" | "soft";
+type ButtonVariant = "outline" | "solid" | "soft" | "light";
 type ButtonSize = "sm" | "md" | "lg";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -15,6 +15,7 @@ const variantStyles: Record<ButtonVariant, string> = {
   solid:
     "border border-obsidian bg-obsidian text-white hover:border-red-1 hover:bg-red-1 hover:text-white",
   soft: "border border-transparent bg-white-2 text-red-1 hover:border-red-1 hover:bg-red-1 hover:text-white",
+  light: "border border-white bg-white text-text hover:border-red-1 hover:bg-red-1 hover:text-white",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
