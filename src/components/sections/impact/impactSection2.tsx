@@ -85,7 +85,7 @@ export function ImpactSection2() {
                   <img
                     src={card.statImg}
                     alt={card.stat}
-                    className="w-[90cqw] h-auto object-contain object-left"
+                    className="w-fit max-w-[90cqw] h-auto object-contain mx-auto"
                   />
                   <div className="flex flex-col md:flex-row md:items-start justify-between gap-2 md:gap-4">
                     <p
@@ -107,7 +107,7 @@ export function ImpactSection2() {
           })}
         </div>
 
-        {/* Dots — mobile only, matches the "Why Choose Us" carousel style */}
+        {/* Dots — mobile only, pill style matching Latest Insights */}
         <div className="flex md:hidden justify-center items-center gap-2 mt-5">
           {FEATURE_TWO_CARDS.map((_, i) => (
             <button
@@ -119,11 +119,9 @@ export function ImpactSection2() {
                 const cardWidth = el.scrollWidth / FEATURE_TWO_CARDS.length
                 el.scrollTo({ left: cardWidth * i, behavior: "smooth" })
               }}
-              className="size-2 rounded-full transition-all duration-200"
-              style={{
-                backgroundColor: i === activeIndex ? "#000000" : "#d3d3d3",
-                transform: i === activeIndex ? "scale(1.2)" : "scale(1)",
-              }}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                i === activeIndex ? "w-5 bg-[#E5383B]" : "w-2 bg-gray-300"
+              }`}
             />
           ))}
         </div>
