@@ -67,19 +67,39 @@
     font-weight: 400;
   }
 
+  /* Hero — smaller on phone/tablet; desktop (lg+) uses design tokens unchanged */
   .text-hero-title {
-    font-family: var(--font-serif);
-    font-size: clamp(20px, 4.5vw, 36px);
-    line-height: 1.15;
+    font-family: "Default Lingo";
     font-weight: 400;
-    letter-spacing: -0.01em;
-    color: var(--color-title);
+    font-size: clamp(28px, 8.5vw, 42px);
+    line-height: 1.15;
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  .text-hero-eyebrow {
+    font-size: var(--text-body-3);
+    line-height: var(--text-body-3--line-height);
+    font-weight: 400;
+  }
+
+  .text-hero-description {
+    font-size: var(--text-btn-2);
+    line-height: var(--text-btn-2--line-height);
+    font-weight: 400;
+  }
+
+  /* Section headers (testimonials, impact, FAQ, …) — body-1 on all screens */
+  .text-section-description {
+    font-size: var(--text-body-1);
+    line-height: var(--text-body-1--line-height);
+    font-weight: 400;
   }
 
   .text-section-eyebrow {
     font-family: var(--font-outfit);
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 20px;
+    line-height: 27px;
     font-weight: 300;
     color: black;
   }
@@ -104,6 +124,16 @@
     .text-hero-title {
       font-size: var(--text-title);
       line-height: var(--text-title--line-height);
+    }
+
+    .text-hero-eyebrow {
+      font-size: var(--text-header-4);
+      line-height: var(--text-header-4--line-height);
+    }
+
+    .text-hero-description {
+      font-size: var(--text-header-3);
+      line-height: var(--text-header-3--line-height);
     }
   }
 }

@@ -23,8 +23,9 @@ body {
   --color-red-3: #a81317;
   --color-red-4: #660806;
   --color-obsidian: #15191c;
+  
 
-  --text-title: 60px;
+  --text-title: 80px;
   --text-title--line-height: 80px;
   --text-header-1: 48px;
   --text-header-1--line-height: 52px;
@@ -34,10 +35,10 @@ body {
   --text-header-3--line-height: 31px;
   --text-header-4: 20px;
   --text-header-4--line-height: 27px;
-  --text-body-1: 18px;
-  --text-body-1--line-height: 25px;
-  --text-body-2: 16px;
-  --text-body-2--line-height: 23px;
+  --text-body-1: 16px;
+  --text-body-1--line-height: 23px;
+  --text-body-2: 24px;
+  --text-body-2--line-height: 31px;
   --text-body-3: 14px;
   --text-body-3--line-height: 21px;
   --text-btn-1: 18px;
@@ -79,7 +80,7 @@ body {
   --navbar-btn-padding-x: 16px;
 
   --hero-section-padding-y-sm: 48px;
-  --hero-section-padding-y: 80px;
+  --hero-section-padding-y: 40px;
   --hero-title-max-width: 1100px;
   --hero-title-gap: 40px;
   --hero-image-width: 1328px;

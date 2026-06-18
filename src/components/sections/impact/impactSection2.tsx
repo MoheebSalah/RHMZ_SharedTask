@@ -1,46 +1,42 @@
 import { useEffect, useRef, useState } from "react";
 import { FEATURE_TWO, FEATURE_TWO_CARDS } from "../../../lib/constants";
 import SectionContainer from "../../layout/SectionContainer";
-
+import SectionHeader from "../../shared/SectionHeader";
 const FONT_SANS = "'Outfit', 'Inter', sans-serif";
 
 const IMPACT_CARD_HEIGHT_CLASSES = [
   "md:min-h-[clamp(360px,50vh,520px)]",
   "md:min-h-[clamp(420px,58vh,600px)]",
   "md:min-h-[clamp(480px,66vh,680px)]",
-] as const;
+] as const
 
 export function ImpactSection2() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0)
+  const scrollRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
+    const el = scrollRef.current
+    if (!el) return
     const handleScroll = () => {
-      const cardWidth = el.scrollWidth / FEATURE_TWO_CARDS.length;
-      setActiveIndex(Math.round(el.scrollLeft / cardWidth));
-    };
-    el.addEventListener("scroll", handleScroll, { passive: true });
-    return () => el.removeEventListener("scroll", handleScroll);
-  }, []);
+      const cardWidth = el.scrollWidth / FEATURE_TWO_CARDS.length
+      setActiveIndex(Math.round(el.scrollLeft / cardWidth))
+    }
+    el.addEventListener("scroll", handleScroll, { passive: true })
+    return () => el.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
     <section
-      className="w-full overflow-hidden bg-white py-10 sm:py-12 lg:py-14"
+      className="w-full overflow-hidden bg-white "
       style={{ fontFamily: FONT_SANS }}
     >
-      <SectionContainer>
+      <SectionContainer className="flex flex-col gap-[var(--testimonials-outer-gap)]">
         {/* Heading row */}
-        <div className="mb-10 flex flex-col gap-3 md:flex-row md:items-end md:justify-between md:gap-8">
-          <div className="max-w-[560px]">
-            <p className="text-section-eyebrow mb-3">{FEATURE_TWO.eyebrow}</p>
-            <h2 className="text-section-title">{FEATURE_TWO.title}</h2>
-          </div>
-          <p className="max-w-[340px] text-body-2 text-subtext md:pb-1">
-            {FEATURE_TWO.description}
-          </p>
-        </div>
+        <SectionHeader
+          eyebrow={FEATURE_TWO.eyebrow}
+          title={FEATURE_TWO.title}
+          description={FEATURE_TWO.description}
+        />
 
         {/*
           Cards Container:
@@ -52,16 +48,15 @@ export function ImpactSection2() {
           className="flex flex-row items-stretch md:items-start gap-0 overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           {FEATURE_TWO_CARDS.map((card, i) => {
-            const heightClass = IMPACT_CARD_HEIGHT_CLASSES[i];
+            const heightClass = IMPACT_CARD_HEIGHT_CLASSES[i]
 
-            let borderClasses = "rounded";
+            let borderClasses = "rounded"
             if (i === 0) {
-              borderClasses += " md:rounded-none md:rounded-l";
+              borderClasses += " md:rounded-none md:rounded-l"
             } else if (i === 1) {
-              borderClasses += " md:rounded-none md:rounded-bl";
+              borderClasses += " md:rounded-none md:rounded-bl"
             } else if (i === FEATURE_TWO_CARDS.length - 1) {
-              borderClasses +=
-                " md:rounded-none md:rounded-r md:rounded-bl";
+              borderClasses += " md:rounded-none md:rounded-r md:rounded-bl";
             }
 
             return (
@@ -108,7 +103,7 @@ export function ImpactSection2() {
                   </div>
                 </div>
               </div>
-            );
+            )
           })}
         </div>
 
@@ -119,10 +114,10 @@ export function ImpactSection2() {
               key={i}
               aria-label={`Go to card ${i + 1}`}
               onClick={() => {
-                const el = scrollRef.current;
-                if (!el) return;
-                const cardWidth = el.scrollWidth / FEATURE_TWO_CARDS.length;
-                el.scrollTo({ left: cardWidth * i, behavior: "smooth" });
+                const el = scrollRef.current
+                if (!el) return
+                const cardWidth = el.scrollWidth / FEATURE_TWO_CARDS.length
+                el.scrollTo({ left: cardWidth * i, behavior: "smooth" })
               }}
               className="size-2 rounded-full transition-all duration-200"
               style={{
@@ -134,7 +129,7 @@ export function ImpactSection2() {
         </div>
       </SectionContainer>
     </section>
-  );
+  )
 }
 
-export default ImpactSection2;
+export default ImpactSection2

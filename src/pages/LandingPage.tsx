@@ -6,21 +6,26 @@ import TestimonialsSection from "../components/sections/testimonials/Testimonial
 import Footer from "../components/layout/footer/Footer";
 import Navbar from "../components/layout/Navbar";
 import FeatureOne from "../components/sections/feature-one/FeatureOneSection";
+import CoreServices from "../components/sections/core-services/CoreServices";
+import LatestInsights from "../components/sections/insights/LatestInsights";
 
 export default function LandingPage() {
   return (
     <>
       <Navbar />
-      <main className="overflow-x-clip pt-[var(--navbar-height)]">
-        <HeroSection />
-        <PartnersSection />
+      <main className="overflow-x-clip pt-[var(--navbar-height)]  flex flex-col gap-[200px]">
+        <div className="flex flex-col gap-[40px]">
+          <HeroSection />
+          <PartnersSection />
+        </div>
         <FeatureOne />
         <ImpactSection2 />
         <FaqSection />
+        <CoreServices />
+        <LatestInsights />
         <TestimonialsSection />
-
         <Footer />
       </main>
     </>
-  );
+  )
 }
