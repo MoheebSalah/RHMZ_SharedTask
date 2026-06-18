@@ -15,7 +15,7 @@ export default function SectionHeader({
 
       <div className="flex w-full flex-col items-start justify-between gap-4 md:flex-row md:items-end md:gap-8">
         <h2 className="max-w-[560px] text-section-title">{title}</h2>
-        <p className="max-w-[340px] text-section-description text-subtext md:pb-1">
+        <p className="max-w-[318px] text-section-description text-subtext md:pb-1">
           {description}
         </p>
       </div>

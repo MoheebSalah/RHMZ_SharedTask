@@ -95,7 +95,7 @@
 
   /* Section headers (testimonials, impact, FAQ, …) — body-1 on all screens */
   .text-section-description {
-    font-size: var(--text-body-1);
+    font-size: 18px;
     line-height: var(--text-body-1--line-height);
     font-weight: 400;
   }
@@ -111,7 +111,7 @@
   .text-section-title {
     margin: 0;
     font-family: var(--font-serif);
-    font-size: 32px;
+    font-size: 48px;
     line-height: 38px;
     font-weight: 400;
     color: var(--color-text);
