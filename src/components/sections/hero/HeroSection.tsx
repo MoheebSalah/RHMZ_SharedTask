@@ -1,11 +1,11 @@
-import Button from "../../ui/Button";
-import SectionContainer from "../../layout/SectionContainer";
-import { ASSETS } from "../../../lib/assets";
+import Button from "../../ui/Button"
+import SectionContainer from "../../layout/SectionContainer"
+import { ASSETS } from "../../../lib/assets"
 
-const HERO_EYEBROW = "Trusted by Growing Businesses";
-const HERO_TITLE = "Strategic Business Consulting That Drives Real Growth";
+const HERO_EYEBROW = "Trusted by Growing Businesses"
+const HERO_TITLE = "Strategic Business Consulting That Drives Real Growth"
 const HERO_DESCRIPTION =
-  "We help startups, small businesses, and established companies overcome challenges, improve operations, and unlock new opportunities through expert consulting and data-driven strategies.";
+  "We help startups, small businesses, and established companies overcome challenges, improve operations, and unlock new opportunities through expert consulting and data-driven strategies."
 
 export default function HeroSection() {
   return (
@@ -47,5 +47,5 @@ export default function HeroSection() {
         />
       </SectionContainer>
     </section>
-  );
+  )
 }

@@ -2,21 +2,18 @@ import { useEffect, useRef, useState } from "react";
 import { FEATURE_TWO, FEATURE_TWO_CARDS } from "../../../lib/constants";
 import SectionContainer from "../../layout/SectionContainer";
 
-// All non-display text uses Outfit @400 (loaded in index.html). Set once on the
-// <section> so every child inherits it; serif elements override inline.
 const FONT_SANS = "'Outfit', 'Inter', sans-serif";
 
 const IMPACT_CARD_HEIGHT_CLASSES = [
-  "md:min-h-[var(--impact-card-short-height)]",
-  "md:min-h-[var(--impact-card-mid-height)]",
-  "md:min-h-[var(--impact-card-tall-height)]",
+  "md:min-h-[clamp(360px,50vh,520px)]",
+  "md:min-h-[clamp(420px,58vh,600px)]",
+  "md:min-h-[clamp(480px,66vh,680px)]",
 ] as const;
 
 export function ImpactSection2() {
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Track which card is centered on mobile so the dots stay in sync with swipes.
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
@@ -52,22 +49,17 @@ export function ImpactSection2() {
         */}
         <div
           ref={scrollRef}
-          className="flex flex-row md:flex-row items-stretch md:items-start gap-0 md:gap-0 overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          className="flex flex-row items-stretch md:items-start gap-0 overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           {FEATURE_TWO_CARDS.map((card, i) => {
             const heightClass = IMPACT_CARD_HEIGHT_CLASSES[i];
 
-            // Define dynamic border radius based on position
-            let borderClasses = "rounded-md"; // Default for mobile (6px)
-
+            let borderClasses = "rounded-md";
             if (i === 0) {
-              // Left Card: Desktop bottom-left and top-left rounded. Right edges square.
               borderClasses += " md:rounded-none md:rounded-l-md";
             } else if (i === 1) {
-              // Middle Card: Desktop top-left, top-right, bottom-right square. Bottom-left rounded because it hangs below Card 1.
               borderClasses += " md:rounded-none md:rounded-bl-md";
             } else if (i === FEATURE_TWO_CARDS.length - 1) {
-              // Right Card: Desktop right edges rounded. Top-left square. Bottom-left rounded because it hangs below Card 2.
               borderClasses +=
                 " md:rounded-none md:rounded-r-md md:rounded-bl-md";
             }
@@ -83,32 +75,25 @@ export function ImpactSection2() {
                   transition-all duration-300 ease-out
                   hover:-translate-y-1 hover:scale-[1.01] hover:z-10 hover:shadow-lg hover:shadow-black/10
                 `}
-                style={{
-                  backgroundColor: card.background,
-                }}
+                style={{ backgroundColor: card.background }}
               >
                 {/* Icon top-left */}
                 <div className="mb-12">
                   <img
                     src={card.icon}
-                    alt=""
-                    aria-hidden="true"
-                    className="size-[40px] md:size-[55px] object-contain opacity-90"
+                    alt={card.iconAlt}
+                    className="size-[40px] md:size-[48px] object-contain opacity-90"
                     style={{ filter: "brightness(0) invert(1)" }}
                   />
                 </div>
 
-                {/* Number + label/description grouped at bottom */}
+                {/* Number PNG + label/description at bottom */}
                 <div className="flex flex-col gap-6 md:gap-8 mt-auto">
-                  {/* Number rendered as the design's PNG (off-white glyphs on a
-                      transparent background). Width tracks the card via a
-                      container query (cqw = % of the card's content box). */}
                   <img
                     src={card.statImg}
                     alt={card.stat}
                     className="w-[90cqw] h-auto object-contain object-left"
                   />
-
                   <div className="flex flex-col md:flex-row md:items-start justify-between gap-2 md:gap-4">
                     <p
                       className="text-[18px] leading-[25px]"
@@ -129,9 +114,7 @@ export function ImpactSection2() {
           })}
         </div>
 
-        {/* Dots indicator — mobile only. Matches the "Why Choose Us"
-            (FeatureOne) carousel: round 8px dots, active is black and
-            scaled up, inactive are light gray. */}
+        {/* Dots — mobile only, matches the "Why Choose Us" carousel style */}
         <div className="flex md:hidden justify-center items-center gap-2 mt-5">
           {FEATURE_TWO_CARDS.map((_, i) => (
             <button

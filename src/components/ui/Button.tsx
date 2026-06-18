@@ -35,7 +35,7 @@ export default function Button({
   return (
     <button
       type={type}
-      className={`inline-flex items-center justify-center gap-[var(--spacing-stack-sm)] whitespace-nowrap rounded-[var(--radius-sm)] font-bold transition-colors ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
+      className={`inline-flex items-center justify-center gap-[var(--spacing-stack-sm)] whitespace-nowrap rounded-[var(--radius-sm)] font-normal transition-colors ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
       {...props}
     >
       {icon}
