@@ -69,10 +69,10 @@ const LatestInsights = () => {
                 <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between md:gap-8">
                     <div className="max-w-[472px] ">
                         <p className="text-section-eyebrow mb-3">{INSIGHTS_SECTION.eyebrow}</p>
-                        <h2 className="text-section-title">{INSIGHTS_SECTION.title}</h2>
+                        <h2 className="text-section-title">Business Trends, Strategies <br /> & Expert Advice</h2>
                     </div>
                     <p className="max-w-[418px] text-section-description text-subtext md:pb-1">
-                        {INSIGHTS_SECTION.description}
+                        Stay informed with practical insights and proven <br /> approaches from experienced consultants.
                     </p>
                 </div>  
 

@@ -40,10 +40,10 @@ const CoreServices = () => {
                 <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between md:gap-8">
                     <div className="max-w-[472px]">
                         <p className="text-section-eyebrow mb-3">{FEATURE_FOUR.eyebrow}</p>
-                        <h2 className="text-section-title">{FEATURE_FOUR.title}</h2>
+                        <h2 className="text-section-title">Expert Guidance Across <br /> Every Stage of Growth</h2>
                     </div>
                     <p className="max-w-[418px] text-section-description text-subtext md:pb-1">
-                        {FEATURE_FOUR.description}
+                        Our services are designed to help businesses <br /> make smarter decisions and achieve sustainable success.
                     </p>
                 </div>
 
@@ -101,7 +101,7 @@ const CoreServices = () => {
                                     className={`absolute flex flex-col items-start justify-between
                                     p-4 md:p-6 border border-[#D3D3D3]
                                     bottom-3 left-3 right-3
-                                    md:bottom-4 md:left-16 md:right-auto md:w-[760px] md:h-[320px]
+                                    md:bottom-8 md:left-8 md:right-auto md:w-[864px] md:h-[385px]
                                     text-[#660708] bg-[#f5f3f4]
                                     transition-all duration-500 ease-out
                                     ${isActive ? "translate-y-0 opacity-100 delay-100" : "translate-y-12 md:translate-y-50 opacity-0"}
@@ -112,7 +112,7 @@ const CoreServices = () => {
                                         alt=""
                                         className="w-9 h-9 object-contain md:w-auto md:h-auto"
                                     />
-                                    <div className="flex flex-col space-y-2 md:space-y-4">
+                                    <div className="flex flex-col gap-[34px] md:space-y-4">
                                         <h1 className="text-xl md:text-[48px] font-[--font-serif]">
                                             {service.title}
                                         </h1>
