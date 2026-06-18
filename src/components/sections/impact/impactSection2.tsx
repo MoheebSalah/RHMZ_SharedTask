@@ -6,38 +6,11 @@ import SectionContainer from "../../layout/SectionContainer";
 // <section> so every child inherits it; serif elements override inline.
 const FONT_SANS = "'Outfit', 'Inter', sans-serif";
 
-const STATS = [
-  {
-    icon: "/icons/impact/hand-click.png",
-    value: "95%",
-    valueImg: "/icons/impact/num-95.png",
-    label: "Retention",
-    description: "Clients continue working with us year after year.",
-    bg: "#A4161A",
-    // We use tailwind classes for height to make it responsive
-    // (fixed height on mobile, staggered + viewport-capped on desktop so the
-    // whole section fits in one screenful while the cards stay tall).
-    heightClass: "md:min-h-[clamp(380px,50vh,520px)]",
-  },
-  {
-    icon: "/icons/impact/shield-dollar.png",
-    value: "12M+",
-    valueImg: "/icons/impact/num-12m.png",
-    label: "Revenue",
-    description: "Generated through strategies implemented.",
-    bg: "#BA181B",
-    heightClass: "md:min-h-[clamp(460px,58vh,600px)]",
-  },
-  {
-    icon: "/icons/impact/lightbulb-dollar.png",
-    value: "250+",
-    valueImg: "/icons/impact/num-250.png",
-    label: "Businesses",
-    description: "Successfully supported across various industries.",
-    bg: "#E5383B",
-    heightClass: "md:min-h-[clamp(520px,66vh,680px)]",
-  },
-]
+const IMPACT_CARD_HEIGHT_CLASSES = [
+  "md:min-h-[var(--impact-card-short-height)]",
+  "md:min-h-[var(--impact-card-mid-height)]",
+  "md:min-h-[var(--impact-card-tall-height)]",
+] as const;
 
 export function ImpactSection2() {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -117,7 +90,7 @@ export function ImpactSection2() {
                 {/* Icon top-left */}
                 <div className="mb-12">
                   <img
-                    src={iconSrc}
+                    src={card.icon}
                     alt=""
                     aria-hidden="true"
                     className="size-[40px] md:size-[55px] object-contain opacity-90"

@@ -5,6 +5,7 @@ import SectionContainer from "../../layout/SectionContainer"
 // All non-display text uses Outfit @400 (loaded in index.html). Set once on the
 // <section> so every child inherits it; serif elements override inline.
 const FONT_SANS = "'Outfit', 'Inter', sans-serif"
+const FONT_SERIF = "'DM Serif Display', Georgia, serif"
 
 export function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number>(1)
