@@ -13,7 +13,7 @@ export default function LandingPage() {
   return (
     <>
       <Navbar />
-      <main className="overflow-x-clip pt-[var(--navbar-height)]  flex flex-col gap-[200px]">
+      <main className="overflow-x-clip pt-[var(--navbar-height)]  flex flex-col gap-[130px]">
         <div className="flex flex-col gap-[40px]">
           <HeroSection />
           <PartnersSection />
@@ -27,5 +27,5 @@ export default function LandingPage() {
         <Footer />
       </main>
     </>
-  )
+  );
 }
