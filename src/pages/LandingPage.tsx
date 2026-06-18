@@ -11,9 +11,11 @@ export default function LandingPage() {
   return (
     <>
       <Navbar />
-      <main className="overflow-x-clip pt-[var(--navbar-height)]">
-        <HeroSection />
-        <PartnersSection />
+      <main className="overflow-x-clip pt-[var(--navbar-height)]  flex flex-col gap-[200px]">
+        <div className="flex flex-col gap-[40px]">
+          <HeroSection />
+          <PartnersSection />
+        </div>
         <FeatureOne />
         <ImpactSection2 />
         <FaqSection />
