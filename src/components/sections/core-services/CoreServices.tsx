@@ -34,7 +34,7 @@ const CoreServices = () => {
     ] as const;
 
     return (
-        <div className="flex items-center justify-center w-full mx-auto mb-[100px] md:mb-[200px] max-w-[var(--section-max-width)] px-[var(--section-padding-x-sm)] md:px-[var(--section-padding-x)] flex-col gap-[var(--testimonials-outer-gap)]">
+        <div className="flex items-center justify-center w-full mx-auto  max-w-[var(--section-max-width)] px-[var(--section-padding-x-sm)] md:px-[var(--section-padding-x)] flex-col gap-[var(--testimonials-outer-gap)]">
             <div className="flex flex-col space-y-6">
                 {/* header of the section */}
                 <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between md:gap-8">
@@ -79,8 +79,13 @@ const CoreServices = () => {
                                     onClick={() => setActive(i)}
                                 />
 
-                                {/* mobile-only: always-visible title bar */}
-                                <div className="absolute top-0 left-0 right-0 h-[72px] flex items-center gap-3 px-4 bg-gradient-to-b from-black/65 to-transparent md:hidden">
+                                {/* mobile-only: title bar visible when collapsed */}
+                                <div
+                                    className={`absolute top-0 left-0 right-0 h-[72px] flex items-center gap-3 px-4 bg-gradient-to-b from-black/65 to-transparent md:hidden
+                                        transition-opacity duration-500 ease-in-out
+                                        ${isActive ? "opacity-0 pointer-events-none" : "opacity-100"}
+                                    `}
+                                >
                                     <img
                                         src={service.icon}
                                         alt=""
@@ -102,7 +107,11 @@ const CoreServices = () => {
                                     ${isActive ? "translate-y-0 opacity-100 delay-100" : "translate-y-12 md:translate-y-50 opacity-0"}
                                 `}
                                 >
-                                    <img src={service.icon} alt="" className="hidden md:block" />
+                                    <img
+                                        src={service.icon}
+                                        alt=""
+                                        className="w-9 h-9 object-contain md:w-auto md:h-auto"
+                                    />
                                     <div className="flex flex-col space-y-2 md:space-y-4">
                                         <h1 className="text-xl md:text-[48px] font-[--font-serif]">
                                             {service.title}

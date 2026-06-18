@@ -116,7 +116,7 @@ export default function Footer() {
         <SectionContainer className="relative flex flex-col gap-4 pt-10 pb-20 sm:pt-4 sm:pb-[176px]">
           <div className="footer-cta-row grid gap-10 md:grid-cols-2 md:items-start">
             <div className="footer-journey-block w-fit max-w-full">
-              <h3 className="font-display text-[30px] leading-tight !text-white sm:text-[38px]">
+              <h3 className="font-serif text-[40px] leading-tight !text-white sm:text-[38px]">
                 Helping Businesses Make <br className="hidden sm:block" /> Better Decisions Every Day
               </h3>
               <div className="mt-4 w-full">
@@ -124,15 +124,15 @@ export default function Footer() {
               </div>
             </div>
             <div className="sm:pt-2 md:pl-24">
-              <p className="max-w-[560px] text-[15px] font-outfit font-normal leading-[22px] !text-white sm:text-[16px] sm:leading-[23px]">
-                <span className="md:inline-block md:whitespace-nowrap">
+              <p className="max-w-[560px] text-[15px] font-inter font-normal leading-[22px] !text-white sm:text-[16px] sm:leading-[23px]">
+                <span className="md:inline-block md:whitespace-nowrap font-inter">
                   Expert consulting services focused on growth,
                 </span>
                 <br />
                 efficiency, and long-term success.
               </p>
               <div className="my-3 h-px w-full max-w-sm bg-white/30" />
-              <p className="text-[16px] font-outfit font-normal text-white">
+              <p className="text-[16px] font-inter font-normal text-white">
                 Your partner in business growth.
               </p>
             </div>
