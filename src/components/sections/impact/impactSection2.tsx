@@ -54,26 +54,24 @@ export function ImpactSection2() {
           {FEATURE_TWO_CARDS.map((card, i) => {
             const heightClass = IMPACT_CARD_HEIGHT_CLASSES[i];
 
-            let borderClasses = "rounded-md";
+            let borderClasses = "rounded";
             if (i === 0) {
-              borderClasses += " md:rounded-none md:rounded-l-md";
+              borderClasses += " md:rounded-none md:rounded-l";
             } else if (i === 1) {
-              borderClasses += " md:rounded-none md:rounded-bl-md";
+              borderClasses += " md:rounded-none md:rounded-bl";
             } else if (i === FEATURE_TWO_CARDS.length - 1) {
               borderClasses +=
-                " md:rounded-none md:rounded-r-md md:rounded-bl-md";
+                " md:rounded-none md:rounded-r md:rounded-bl";
             }
 
             return (
               <div
                 key={card.label}
-                className={`group relative flex flex-col justify-between p-8 shrink-0 snap-center text-white
+                className={`group relative flex flex-col justify-between p-5 md:p-8 shrink-0 snap-center text-white
                   [container-type:inline-size]
-                  w-[100vw] md:w-full md:flex-1
-                  min-h-[350px] ${heightClass}
+                  w-[calc(100vw-40px)] md:w-full md:flex-1
+                  min-h-[300px] sm:min-h-[350px] ${heightClass}
                   ${borderClasses}
-                  transition-all duration-300 ease-out
-                  hover:-translate-y-1 hover:scale-[1.01] hover:z-10 hover:shadow-lg hover:shadow-black/10
                 `}
                 style={{ backgroundColor: card.background }}
               >
