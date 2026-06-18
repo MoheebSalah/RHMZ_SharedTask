@@ -37,7 +37,7 @@ export function ImpactSection2() {
             <p className="text-section-eyebrow mb-3">{FEATURE_TWO.eyebrow}</p>
             <h2 className="text-section-title">{FEATURE_TWO.title}</h2>
           </div>
-          <p className="max-w-[340px] text-body-2 text-subtext md:pb-1">
+          <p className="max-w-[340px] text-section-description text-subtext md:pb-1">
             {FEATURE_TWO.description}
           </p>
         </div>

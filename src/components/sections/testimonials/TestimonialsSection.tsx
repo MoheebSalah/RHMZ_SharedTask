@@ -98,10 +98,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section
-      aria-label="Client testimonials"
-      className="bg-white py-[var(--spacing-section-y-sm)] lg:py-[var(--spacing-section-y)]"
-    >
+    <section aria-label="Client testimonials" className="bg-white py-0 lg:py-0">
       <SectionContainer className="flex flex-col gap-[var(--testimonials-outer-gap)]">
         <SectionHeader
           eyebrow={TESTIMONIALS_SECTION.eyebrow}

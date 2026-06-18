@@ -31,7 +31,7 @@ export function FaqSection() {
               Answers to Common <br></br>Questions
             </h2>
           </div>
-          <p className="max-w-[340px] text-body-2 text-subtext md:pb-1">
+          <p className="max-w-[340px] text-section-description text-subtext md:pb-1">
             {FEATURE_THREE.description}
           </p>
         </div>
