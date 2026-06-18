@@ -107,8 +107,8 @@
   .text-section-title {
     margin: 0;
     font-family: var(--font-serif);
-    font-size: 26px;
-    line-height: 34px;
+    font-size: 32px;
+    line-height: 38px;
     font-weight: 400;
     color: var(--color-text);
   }
