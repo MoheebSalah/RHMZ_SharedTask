@@ -1,6 +1,6 @@
 import { FiArrowUpRight } from "react-icons/fi"
 import { FaXTwitter } from "react-icons/fa6"
-import Container from "../Container"
+import Container from "../SectionContainer"
 import Logo from "../Logo"
 import Button from "../../ui/Button"
 import footerImg2 from "../../../assets/images/footer.png"
@@ -35,7 +35,7 @@ const SOCIALS = [
   },
 ]
 
-/** The wide outlined "footer button" — white by default, orange on hover. */
+/** The wide outlined "footer button" — white by default, Orange On Hover. */
 function StartJourneyButton() {
   return (
     <a
