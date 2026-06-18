@@ -34,7 +34,7 @@ const CoreServices = () => {
     ] as const;
 
     return (
-        <div className="flex items-center justify-center w-full mx-auto mb-[100px] md:mb-[200px] max-w-[var(--section-max-width)] px-[var(--section-padding-x-sm)] md:px-[var(--section-padding-x)] flex-col gap-[var(--testimonials-outer-gap)]">
+        <div className="flex items-center justify-center w-full mx-auto   max-w-[var(--section-max-width)] px-[var(--section-padding-x-sm)] md:px-[var(--section-padding-x)] flex-col gap-[var(--testimonials-outer-gap)]">
             <div className="flex flex-col space-y-6">
 
                 {/* header of the section */}

@@ -60,7 +60,7 @@ const LatestInsights = () => {
     };
 
     return (
-        <div className="flex items-center justify-center mx-auto w-full mb-[100px] max-w-[var(--section-max-width)] px-[var(--section-padding-x-sm)] md:px-[var(--section-padding-x)]  flex-col gap-[var(--testimonials-outer-gap)] ">
+        <div className="flex items-center justify-center mx-auto w-full  max-w-[var(--section-max-width)] px-[var(--section-padding-x-sm)] md:px-[var(--section-padding-x)]  flex-col gap-[var(--testimonials-outer-gap)] ">
             <div className="flex flex-col justify-center space-y-6 w-full">
 
                 {/* header of the section */}
@@ -94,7 +94,7 @@ const LatestInsights = () => {
                             <div className="overflow-hidden rounded-md">
                                 <img
                                     src={post.image}
-                                    className="overflow-hidden object-cover w-full h-[340px] md:h-auto border border-[#D9D9D9] group-hover:brightness-70 group-hover:scale-110 transition-all ease-in-out duration-200"
+                                    className="overflow-hidden object-cover w-full h-[340px] md:h-auto  group-hover:brightness-70 group-hover:scale-110 transition-all ease-in-out duration-200"
                                     alt={post.imageAlt} />
                             </div>
                             <h4 className={`text-[20px]
