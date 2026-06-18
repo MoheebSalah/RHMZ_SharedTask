@@ -252,9 +252,9 @@ export const INSIGHTS_BLOG_POSTS = [
 
 export const TESTIMONIALS_SECTION = {
   eyebrow: "Client Success Stories",
-  title: "Trusted by Business Leaders",
+  title: "Trusted by\nBusiness Leaders",
   description:
-    "See how organizations have transformed their operations and achieved measurable growth with our support.",
+    "See how organizations have transformed their\noperations and achieved measurable growth with\nour support.",
 } as const
 
 export type TestimonialId = "left" | "center" | "right"
@@ -266,7 +266,7 @@ export const TESTIMONIALS = [
     imageAlt: "Michael Turner",
     objectPosition: "center 18%",
     quote:
-      "The team quickly identified growth opportunities we had overlooked and helped us build a clear roadmap for expansion.",
+      "The team quickly identified growth\nopportunities we had overlooked and helped us\nbuild a clear roadmap for expansion.",
     name: "Michael Turner",
     company: "NorthPeak Ventures",
   },
