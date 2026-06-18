@@ -11,7 +11,7 @@ export default function SectionHeader({
 }: SectionHeaderProps) {
   return (
     <div className="flex w-full flex-col gap-5">
-      <p className="text-section-eyebrow">{eyebrow}</p>
+      <p className="text-section-eyebrow text-[20px]">{eyebrow}</p>
 
       <div className="flex w-full flex-col items-start justify-between gap-4 md:flex-row md:items-end md:gap-8">
         <h2 className="max-w-[560px] whitespace-pre-line text-section-title">
