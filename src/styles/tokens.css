@@ -75,7 +75,7 @@
   --testimonials-panel-transition: 400ms;
   --testimonials-inactive-overlay: #161a1d;
   --testimonials-inactive-overlay-opacity: 0.6;
-  --testimonials-content-padding-left: clamp(12px, 4vw, 100px);
+  --testimonials-content-padding-left: clamp(12px, 4vw, 80px);
   --testimonials-frame-height: 400px;
 }
 
@@ -121,7 +121,7 @@
 
 @utility text-testimonial-quote {
   font-family: var(--font-serif);
-  font-size: clamp(18px, 2.2vw, 32px);
+  font-size: 36px;
   line-height: 1.15;
   font-weight: 400;
 }
