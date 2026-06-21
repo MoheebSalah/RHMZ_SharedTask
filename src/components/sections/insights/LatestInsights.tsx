@@ -74,7 +74,7 @@ const LatestInsights = () => {
                     <p className="max-w-[418px] text-section-description text-subtext md:pb-1">
                         Stay informed with practical insights and proven <br /> approaches from experienced consultants.
                     </p>
-                </div>  
+                </div>
 
                 {/* cards — snap-scroll carousel on mobile, unchanged row on desktop */}
                 <div
